@@ -20,7 +20,7 @@ export default function WorkPage() {
     {
       title: 'DOE Insight',
       subtitle: 'AI-Powered School Performance Reports',
-      href: '/nyc-department-of-education-insight',
+      href: '/nyc-department-of-education-insight',1
     },
   ]
 
