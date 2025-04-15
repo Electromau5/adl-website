@@ -1,3 +1,4 @@
+
 'use client'
 
 export default function HomePage() {
@@ -5,6 +6,8 @@ export default function HomePage() {
     const section = document.getElementById('about')
     if (section) section.scrollIntoView({ behavior: 'smooth' })
   }
+
+
 
   return (
     <>
