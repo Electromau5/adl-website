@@ -20,8 +20,7 @@ export default function WorkPage() {
           href: '/project-management-for-engineering-teams',
           image: '/images/project-mpi-cover.png',
         },
-      ]
-      
+      ]      
 
     return (
         <div className="min-h-screen px-6 py-20 md:px-20 bg-white text-gray-900">
@@ -34,10 +33,16 @@ export default function WorkPage() {
                         href={project.href}
                         className="block border border-gray-200 rounded-2xl p-6 transition-transform hover:-translate-y-1 hover:shadow-xl bg-white"
                     >
-                        <div>
+                       <div>
+                            <img 
+                                src={project.image} 
+                                alt={`${project.title} cover image`} 
+                                className="w-full h-48 object-cover rounded-xl mb-4"
+                            />
                             <h2 className="text-2xl font-semibold">{project.title}</h2>
                             <p className="text-gray-600 mt-2">{project.subtitle}</p>
                         </div>
+
                     </Link>
                 ))}
             </div>

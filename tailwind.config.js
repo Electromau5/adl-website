@@ -10,6 +10,9 @@ module.exports = {
       fontFamily: {
         satoshi: ['Satoshi', ...defaultTheme.fontFamily.sans],
       },
+      backdropBlur: {
+        'xs': '1px',
+      },
     },
   },
   plugins: [],
