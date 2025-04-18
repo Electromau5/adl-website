@@ -4,11 +4,13 @@
 // Example: <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 export default function HomePage() {
+
+  /*
   const scrollToAbout = () => {
     const section = document.getElementById('about')
     if (section) section.scrollIntoView({ behavior: 'smooth' })
   }
-
+*/
   return (
     <div className="bg-white">
       {/* Hero Section */}
@@ -35,7 +37,7 @@ export default function HomePage() {
               With over 10+ years as Enterprise Designers, we understand that design is the foundation of every successful product.
             </p>
             <button className="bg-black text-white font-semibold px-6 py-2 rounded-lg hover:bg-gray-800 transition">
-              Let's Go
+              Let&apos;s Go
             </button>
           </div>
         </div>
