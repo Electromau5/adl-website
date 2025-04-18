@@ -9,9 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         satoshi: ['Satoshi', ...defaultTheme.fontFamily.sans],
-      },
-      backdropBlur: {
-        'xs': '1px',
+        inter: ['Inter', ...defaultTheme.fontFamily.sans], // <- THIS MUST BE EXACT
       },
     },
   },

@@ -15,10 +15,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
   <head>
-    <link
-      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
-      rel="stylesheet"
-    />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
   </head>
   <body className="font-satoshi bg-white text-gray-900">
     <Header />
