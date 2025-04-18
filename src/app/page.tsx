@@ -37,7 +37,7 @@ export default function HomePage() {
               With over 10+ years as Enterprise Designers, we understand that design is the foundation of every successful product.
             </p>
             <button className="bg-black text-white font-semibold px-6 py-2 rounded-lg hover:bg-gray-800 transition">
-              Let&apos;s Go
+            Let&apos;s Go
             </button>
           </div>
         </div>
