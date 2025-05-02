@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import DarkModeToggle from './DarkModeToggle'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -11,20 +12,27 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
         {/* Logo */}
         <Link href="/" className="text-xl font-bold text-gray-800">
-          Artemis Design Labs
+          <span>Artemis Design Labs</span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-6">
-          <Link href="/work" className="font-satoshi text-gray-600 hover:text-black">Work</Link>
-          <Link href="/services" className="font-satoshi text-gray-600 hover:text-black">Services</Link>
-          <Link href="/contact" className="font-satoshi text-gray-600 hover:text-black">Contact</Link>
+        <nav className="hidden md:flex space-x-6 items-center" aria-label="Main navigation">
+          <Link href="/work">
+            <span className="font-satoshi text-gray-600 hover:text-black">Work</span>
+          </Link>
+          <Link href="/services">
+            <span className="font-satoshi text-gray-600 hover:text-black">Services</span>
+          </Link>
+          <Link href="/contact">
+            <span className="font-satoshi text-gray-600 hover:text-black">Contact</span>
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-gray-800 focus:outline-none"
+          aria-label="Toggle mobile menu"
+          className="md:hidden text-gray-800 dark:text-white focus:outline-none"
         >
           <svg
             className="w-6 h-6"
@@ -44,11 +52,23 @@ export default function Header() {
 
       {/* Mobile Nav Dropdown */}
       {isOpen && (
-        <div className="md:hidden px-4 pb-4 flex flex-col space-y-2 bg-white border-t">
-          <Link href="/work" className="text-gray-700 hover:text-black">Work</Link>
-          <Link href="/services" className="text-gray-700 hover:text-black">Services</Link>
-          <Link href="/contact" className="text-gray-700 hover:text-black">Contact</Link>
-        </div>
+        <nav
+          aria-label="Mobile navigation"
+          className="md:hidden px-4 pb-4 flex flex-col space-y-2 bg-white border-t dark:border-gray-700"
+        >
+          <Link href="/work">
+            <span className="text-gray-700 hover:text-black">Work</span>
+          </Link>
+          <Link href="/services">
+            <span className="text-gray-700 hover:text-black">Services</span>
+          </Link>
+          <Link href="/contact">
+            <span className="text-gray-700 hover:text-black">Contact</span>
+          </Link>
+          <div className="pt-2">
+            <DarkModeToggle />
+          </div>
+        </nav>
       )}
     </header>
   )

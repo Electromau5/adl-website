@@ -1,5 +1,7 @@
 'use client'
 
+import Milestones from './components/Milestones'
+
 /* eslint-disable react/no-unescaped-entities */
 
 // Import Google Fonts in your global CSS or HTML head
@@ -45,7 +47,7 @@ export default function HomePage() {
       </section>
 
       {/* Carousel Section */}
-      <section className="overflow-hidden bg-white py-10">
+      <section className="overflow-hidden bg-white py-4">
         <div className="flex animate-scroll">
           <div className="flex">
             <img src="/images/Verizon-logo.png" alt="Image 1" className="w-60 h-60 mx-4 object-contain" />
@@ -74,16 +76,24 @@ export default function HomePage() {
       {/* About Us Section */}
       <section
         id="about"
-        className="relative py-20 px-6 md:px-16 bg-cover bg-center"
-        style={{ backgroundImage: "url('/about-us.jpg')" }}
+        className="py-20 px-6 md:px-16"
       >
-        <div className="w-full max-w-md bg-white/40 max-w-2xl mx-auto backdrop-blur-sm rounded-2xl shadow-md p-10 text-center">
-          <h2 className="text-3xl font-bold text-black mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>Who we are</h2>
-          <p className="text-gray-900 text-lg leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
-            Nestled in the heart of New York City, we at Artemis Design Labs specialise in catapulting
-            early and mid-stage startups into the forefront of the Enterprise, SaaS, and B2B sectors by
-            collaborating with visionary founders to understand their unique challenges and aspirations.
-          </p>
+        <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto space-y-8 md:space-y-0 md:space-x-8">
+          {/* Image */}
+          <div className="flex-1">
+            <img src="/images/who-we-are.png" alt="Who we are" className="rounded-lg shadow-md w-full h-auto" />
+          </div>
+          {/* Text */}
+          <div className="flex-1 text-left">
+            <h2 className="text-3xl font-bold text-black mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>Who we are</h2>
+            <p className="text-gray-900 text-lg leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
+              Our Agency is built specifically for founders and product leaders building AI-powered enterprise software.
+              <br /><br />
+              We understand the unique pressures of creating usable AI interfaces, aligning with business goals, and launching under aggressive timelines.
+              <br /><br />
+              Whether you're building from scratch, seeking a design system for scale, or overhauling a clunky UX, ADL acts as an embedded partner—translating ideas into scalable, enterprise-ready digital products.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -116,6 +126,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Milestones Section */}
+      <Milestones />
     </div>
   )
 }

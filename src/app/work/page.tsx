@@ -13,13 +13,13 @@ export default function WorkPage() {
         {
             title: 'DOE Insight',
             subtitle: 'AI-Powered School Performance Reports',
-            href: '/nyc-department-of-education-insight',
+            href: '/insight',
             image: '/images/project-insight-cover.png',
         },
         {
             title: 'Project Inbox',
             subtitle: 'Project Coordination for Engineering Teams',
-            href: '/project-management-for-engineering-teams',
+            href: '/my-project-inbox',
             image: '/images/project-mpi-cover.png',
         },
     ]
