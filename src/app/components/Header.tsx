@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import DarkModeToggle from './DarkModeToggle'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -65,9 +64,6 @@ export default function Header() {
           <Link href="/contact">
             <span className="text-gray-700 hover:text-black text-sm">Contact</span>
           </Link>
-          <div className="pt-2">
-            <DarkModeToggle />
-          </div>
         </nav>
       )}
     </header>
