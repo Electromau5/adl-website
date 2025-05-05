@@ -4,17 +4,19 @@ export default function HandsAIPage() {
         <div className="max-w-5xl mx-auto">
           {/* Title and Intro */}
           <h1 className="text-4xl font-bold leading-tight mb-6">
-            HANDS AI: Transforming Casework with Smart Automation
+          Streamlining Project Management with My Project Inbox
           </h1>
           <p className="text-lg text-gray-700 mb-12">
-          The Special Supplemental Nutrition Program for Women, Infants, and Children (WIC) is a government initiative that serves millions of families across the country, providing critical nutrition assistance and healthcare support.
+          My Project Inbox is a next-generation project coordination platform that transforms how engineering and networking teams manage tasks. It provides real-time project tracking, seamless task delegation, and structured progress monitoring, ensuring efficient collaboration and accountability.
           <br /><br />
-          CMA Global, a leader in IT infrastructure, launched an internal startup to develop Emma—an AI-powered assistant designed to improve case management. As part of their broader initiative, they built HANDS AI, an enterprise platform supporting WIC programs across six U.S. states by streamlining workflows and surfacing critical insights. We partnered with CMA’s internal team to lead the end-to-end design of Emma, ensuring a seamless, accessible, and productivity-boosting experience within the HANDS AI ecosystem.
+          <b>Holistic Project Oversight: </b>Offers a dashboard-centric approach to managing active, scheduled, and completed projects. <br />
+          <b>Smart Task Delegation: </b> Enables managers to assign, update, or reassign team members efficiently.  <br />
+          <b>Adaptive Progress Insights: </b>  Displays status updates, workload distribution, and blockers for proactive decision-making.  <br />
           </p>
   
           {/* Full-bleed cover image */}
           <img
-            src="/images/hands-ai/cover.png"
+            src="/images/my-project-inbox/cover.png"
             alt="HANDS AI Cover"
             className="w-full max-w-[600px] mx-auto rounded-lg"
         />
@@ -33,21 +35,24 @@ export default function HandsAIPage() {
       </h2>
       <ul className="space-y-6 text-gray-800">
         <li>
-          <h3 className="font-semibold">Design Leadership</h3>
           <p>
-            Took full ownership of the design process, ensuring alignment, on-time delivery, and a cohesive user experience.
+          As part of the My Project Inbox design team, we worked across multiple disciplines to ensure a user-friendly, intuitive, and high-performance platform for project management and team collaboration. <br /><br />
+          </p>
+          <h3 className="font-semibold">User Experience Strategy</h3>
+          <p>
+          Focused on designing intuitive workflows that reduce complexity in project delegation and tracking.
           </p>
         </li>
         <li>
-          <h3 className="font-semibold">Human-Centered Approach</h3>
+          <h3 className="font-semibold">Operational Optimization</h3>
           <p>
-            Led extensive research and usability testing to understand user pain points and identify areas where the AI could deliver real value.
+          Identified and streamlined workflow bottlenecks, ensuring a more efficient project lifecycle.
           </p>
         </li>
         <li>
-          <h3 className="font-semibold">Cross-Functional Delivery</h3>
+          <h3 className="font-semibold">Cross-Team Engagement</h3>
           <p>
-            Facilitated collaboration between design, engineering, and AI teams to ensure seamless integration of AI capabilities into the platform’s core features.
+          Facilitated alignment between design, engineering, and leadership teams to enhance usability and scalability.
           </p>
         </li>
       </ul>
@@ -63,14 +68,11 @@ export default function HandsAIPage() {
       </h2>
       <div className="grid grid-cols-2 gap-x-6 gap-y-8 text-gray-800">
         {[
-          { value: '$250K', label: 'Projected Reduction in Administrative Overhead Costs' },
-          { value: '45%', label: 'Increase in Documentation Accuracy' },
-          { value: '40%', label: 'Reduction in Manual Data Entry Time' },
-          { value: '68%', label: 'Percentage of Missing Records Flagged' },
-          { value: '30%', label: 'Faster Case Processing' },
-          { value: '60%', label: 'Reduction in Certification Errors' },
-          { value: '20%', label: 'Faster Benefit Processing' },
-          { value: '90%', label: 'Faster Report Generation' },
+          { value: '35%', label: 'Reduction in Task Assignment Time' },
+          { value: '50%', label: 'Improvement in Progress Visibility' },
+          { value: '60%', label: 'Faster Reassignment Workflows' },
+          { value: '75%', label: 'Increase in Project Completion Efficiency' },
+          { value: '85%', label: 'Reduction in Documentation Gaps' },
         ].map((stat, index) => (
           <div key={index}>
             <p className="text-2xl font-bold" style={{ color: '#1976D2' }}>
@@ -97,12 +99,10 @@ export default function HandsAIPage() {
         </h2>
         <hr className="mb-6 border-gray-300" />
         <h3 className="text-3xl font-bold mb-4">
-          Intense Bottlenecks in Case Management
+        Management & Communication Gaps
         </h3>
         <p className="text-gray-700">
-          WIC caseworkers rely on manual, time-consuming processes to manage thousands of client records,
-          medical histories, and appointments. The outdated system leads to delays, high administrative burdens,
-          and missed critical updates, ultimately affecting families in need.
+        Engineering and networking teams faced challenges with disjointed project tracking due to scattered information across multiple platforms, leading to increased coordination time, delays, duplicated efforts, and inconsistent role assignments that hindered effective workload optimization.
         </p>
       </div>
 
@@ -115,11 +115,9 @@ export default function HandsAIPage() {
           The Proposed Solution
         </h2>
         <hr className="mb-6 border-gray-300" />
-        <h3 className="text-3xl font-bold mb-4">Human-Centered Automation</h3>
+        <h3 className="text-3xl font-bold mb-4">A Smarter and More Collaborative System</h3>
         <p className="text-gray-700">
-          An intelligent case management platform that leverages automation and real-time insights to streamline workflows,
-          reduce administrative burdens, and improve decision-making for WIC caseworkers so they can focus on what matters
-          the most – supporting families and ensuring timely access to critical services.
+        My Project Inbox was designed to eliminate inefficiencies by offering a structured dashboard for managing all project phases, enabling real-time updates to keep teams informed on progress and blockers, and allowing flexible project reassignment to dynamically balance workloads.
         </p>
       </div>
     </div>
@@ -128,12 +126,12 @@ export default function HandsAIPage() {
 {/* Right Column: Image */}
 <div className="flex flex-col justify-center items-center h-full gap-6">
   <img
-    src="/images/hands-ai/user-research.png"
+    src="/images/my-project-inbox/user-research.png"
     alt="WIC Family Interaction"
     className="w-full max-w-sm object-cover flex-1 rounded-t-xl"
   />
   <img
-    src="/images/hands-ai/user-research-2.png"
+    src="/images/my-project-inbox/user-research-2.png"
     alt="WIC Family Interaction 2"
     className="w-full max-w-sm object-cover flex-1 rounded-b-xl"
   />
@@ -151,7 +149,7 @@ export default function HandsAIPage() {
     </h2>
     <div className="w-[120%]">
       <img
-        src="/images/hands-ai/design-process.png"
+        src="/images/my-project-inbox/design-process.png"
         alt="Design Process Illustration"
         className="w-full mx-auto rounded-xl"
       />
@@ -171,11 +169,10 @@ export default function HandsAIPage() {
       </h2>
       <hr className="mb-6 border-gray-300" />
       <h3 className="text-3xl font-bold mb-4">
-        Understanding Pain, Stress, and Real-World Challenges
+      Workflow Breakdowns, Ownership Confusion, and Visibility Gaps
       </h3>
       <p className="text-gray-700 mb-10">
-        We conducted 10+ in-depth interviews and 4 contextual inquiry sessions with a diverse group of WIC caseworkers,
-        supervisors, and clinic staff to capture insights into their workflows, mental models, and day-to-day challenges.
+      To deeply understand the project coordination challenges faced by engineering and networking teams, we conducted a multi-method research initiative combining qualitative discovery with quantitative validation. Our approach blended field observation, stakeholder interviews, surveys, and usability testing to ensure insights were holistic, inclusive, and actionable.
       </p>
 
       <h4
@@ -187,21 +184,21 @@ export default function HandsAIPage() {
 
       <div className="space-y-4">
         <div className="flex items-center gap-4 bg-white border border-gray-200 p-4">
-          <img src="/images/hands-ai/user-need-1.png" alt="Vision Icon" className="w-8 h-8" />
+          <img src="/images/my-project-inbox/user-need-1.png" alt="Vision Icon" className="w-8 h-8" />
           <p className="text-gray-800 text-sm">
-            Ensure faster and more accurate access to clients who require high-priority assistance
+          An intuitive platform that enables quick decision making and timely project adjustments.
           </p>
         </div>
         <div className="flex items-center gap-4 bg-white border border-gray-200 p-4">
-          <img src="/images/hands-ai/user-need-2.png" alt="Document Icon" className="w-8 h-8" />
+          <img src="/images/my-project-inbox/user-need-2.png" alt="Document Icon" className="w-8 h-8" />
           <p className="text-gray-800 text-sm">
-            Allow professionals to manage data effortlessly and make informed decisions with confidence
+          Simplified, centralized communication channels to facilitate better collaboration, reducing the risk of miscommunication or lost information.
           </p>
         </div>
         <div className="flex items-center gap-4 bg-white border border-gray-200 p-4">
-          <img src="/images/hands-ai/user-need-3.png" alt="Calendar Icon" className="w-8 h-8" />
+          <img src="/images/my-project-inbox/user-need-3.png" alt="Calendar Icon" className="w-8 h-8" />
           <p className="text-gray-800 text-sm">
-            Reduce no-shows and improve operational efficiency
+          The ability to automate repetitive administrative tasks to increase productivity and allow team members to focus more on critical project activities.
           </p>
         </div>
       </div>
@@ -212,31 +209,31 @@ export default function HandsAIPage() {
       {[
         {
           quote:
-            '“I spend more time fixing errors and hunting for information than actually helping families.”',
-          name: 'Maria Lopez',
-          title: 'Senior Caseworker at Phoenix WIC Clinic',
-          img: '/images/hands-ai/User-1.webp',
+            '"I constantly find myself chasing updates through emails and Slack, which fragments information and delays our response time."',
+          name: 'Jessica Martinez',
+          title: 'Network Operations Manager',
+          img: '/images/my-project-inbox/User-1.webp',
         },
         {
           quote:
-            '“I can’t tell you how many times I’ve missed a key health indicator because the data is buried or incomplete.”',
-          name: 'Dr. Kevin Singh',
-          title: 'Nutritionist at Denver County Health',
-          img: '/images/hands-ai/User-2.webp',
+            '"There’s no clear visibility into the project timeline or who’s accountable for each task, causing frequent confusion among team members."',
+          name: 'Rahul Patel',
+          title: 'Senior Network Engineer',
+          img: '/images/my-project-inbox/User-2.webp',
         },
         {
           quote:
-            '“Our no-show rate is out of control, and it’s because our scheduling system is so clunky.”',
-          name: 'Janet White',
-          title: 'Clinic Manager at Tucson WIC Center',
-          img: 'images/hands-ai/User-3.webp',
+            '"Manual input of repetitive project data into multiple platforms significantly reduces my efficiency and often results in human errors."',
+          name: 'Emily Chen',
+          title: 'Project Coordinator',
+          img: 'images/my-project-inbox/User-3.webp',
         },
         {
           quote:
-            '“It takes forever to find the right client file, and half the time, I’m not even sure if it’s accurate.”',
-          name: 'Derek Thompson',
-          title: 'Program Supervisor at Maricopa County Public Health',
-          img: 'images/hands-ai/User-4.webp',
+            '"It’s challenging to assess overall project health quickly due to scattered documentation and inconsistent project tracking methods across teams."',
+          name: 'Aaron Thompson',
+          title: 'Lead Systems Analyst',
+          img: 'images/my-project-inbox/User-4.webp',
         },
       ].map((person, index) => (
         <div
@@ -264,59 +261,66 @@ export default function HandsAIPage() {
   
               {/* WIC Search */}
               <div>
-                <h3 className="text-xl font-semibold mb-2">Automating Data Filtering</h3>
+                <h3 className="text-xl font-semibold mb-2">Real-Time Project Insights and Filtering</h3>
                 <p className="text-gray-700 mb-4">
-                  Emma alleviates the manual burden of searching through large datasets by instantly applying precise filters and surfacing relevant information...
+                Easily browse and filter large project volumes by status, category, assignee, and more. My Project Inbox gives users instant visibility into what matters, reducing noise and surfacing action items.
                 </p>
-                <img src="/images/hands-ai/WIC-Search.png" alt="WIC Search" className="w-full rounded-lg shadow" />
+                <img src="/images/my-project-inbox/mpi-1.png" alt="WIC Search" className="w-full rounded-lg shadow" />
               </div>
   
               {/* Medical Modules */}
               <div>
-                <h3 className="text-xl font-semibold mb-2">Proactive Health Insights and Risk Monitoring</h3>
+                <h3 className="text-xl font-semibold mb-2">Fast and Structured Project Creation</h3>
                 <p className="text-gray-700 mb-4">
-                  Emma enhances decision-making by surfacing critical health risks, such as iron deficiency...
+                Kick off new projects quickly with guided entry for key details and smart team suggestions. My Project Inbox minimizes setup time while ensuring consistency across projects.
                 </p>
                 <div className="space-y-6">
-                  <img src="/images/hands-ai/Medical-Module.png" alt="Medical Module" className="w-full rounded-lg shadow" />
-                  <img src="/images/hands-ai/Medical-Module-2.png" alt="Medical Module 2" className="w-full rounded-lg shadow" />
+                  <img src="/images/my-project-inbox/mpi-2.png" alt="Medical Module" className="w-full rounded-lg shadow" />
                 </div>
               </div>
   
               {/* Family Module */}
               <div>
-                <h3 className="text-xl font-semibold mb-2">AI-Powered Case Summaries</h3>
+                <h3 className="text-xl font-semibold mb-2">Smooth Team Transitions</h3>
                 <p className="text-gray-700 mb-4">
-                  Emma streamlines case management by automatically summarizing key household details...
+                Transfer project ownership between teams while retaining full context. My Project Inbox supports organizational agility by allowing projects to move across departments with minimal disruption.
                 </p>
-                <img src="/images/hands-ai/Family-Module.png" alt="Family Module" className="w-full rounded-lg shadow" />
+                <img src="/images/my-project-inbox/mpi-3.png" alt="Family Module" className="w-full rounded-lg shadow" />
               </div>
   
               {/* Appointment 1 */}
               <div>
-                <h3 className="text-xl font-semibold mb-2">Seamless Appointment Scheduling with Emma</h3>
+                <h3 className="text-xl font-semibold mb-2">Rapid Project Duplication with Context</h3>
                 <p className="text-gray-700 mb-4">
-                  Emma streamlines appointment scheduling by guiding staff through the process with intuitive options...
+                Clone project details and assign new owners without starting from scratch. My Project Inbox accelerates task replication while preserving important structure and configuration.
                 </p>
-                <img src="/images/hands-ai/Appointment-1.png" alt="Appointment 1" className="w-full rounded-lg shadow" />
+                <img src="/images/my-project-inbox/mpi-4.png" alt="Appointment 1" className="w-full rounded-lg shadow" />
               </div>
   
               {/* Appointment 2 */}
               <div>
-                <h3 className="text-xl font-semibold mb-2">Smart Filtering for Effortless Appointment Management</h3>
+                <h3 className="text-xl font-semibold mb-2">Bulk Reassignment Made Simple</h3>
                 <p className="text-gray-700 mb-4">
-                  Emma simplifies appointment tracking with intelligent filtering, allowing staff to quickly sort by type, status, or priority...
+                Easily reassign multiple projects to new team members in just a few clicks. My Project Inbox reduces the overhead of handoffs and helps managers quickly adapt to staffing or priority changes.
                 </p>
-                <img src="/images/hands-ai/Appointment-2.png" alt="Appointment 2" className="w-full rounded-lg shadow" />
+                <img src="/images/my-project-inbox/mpi-5.png" alt="Appointment 2" className="w-full rounded-lg shadow" />
               </div>
   
               {/* Appointment 3 */}
               <div>
-                <h3 className="text-xl font-semibold mb-2">Actionable No-Show Insights for Better Engagement</h3>
+                <h3 className="text-xl font-semibold mb-2">Efficient Project Updates at Scale</h3>
                 <p className="text-gray-700 mb-4">
-                  Emma provides instant visibility into missed appointments, helping staff track no-shows and take proactive steps...
+                Make quick adjustments to project metadata like category, network, and assignees. My Project Inbox ensures updates are fast, traceable, and always within context—no need to leave the current workflow.
                 </p>
-                <img src="/images/hands-ai/Appointment-3.png" alt="Appointment 3" className="w-full rounded-lg shadow" />
+                <img src="/images/my-project-inbox/mpi-6.png" alt="Appointment 3" className="w-full rounded-lg shadow" />
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Centralized Project Notes for Better Visibility</h3>
+                <p className="text-gray-700 mb-4">
+                My Project Inbox consolidates comments and updates in a single view, giving teams instant access to project history and decisions. This reduces back-and-forth and keeps everyone aligned on key developments.
+                </p>
+                <img src="/images/my-project-inbox/mpi-7.png" alt="Appointment 3" className="w-full rounded-lg shadow" />
               </div>
   
             </div>
@@ -326,20 +330,13 @@ export default function HandsAIPage() {
       <div>
         <h2 className="text-sm font-semibold uppercase mb-2" style={{ color: '#1976D2' }}>Conclusion</h2>
         <h3 className="text-3xl font-bold text-gray-900 mb-6">
-          Empowering Humans to <br /> Automate Efficiency
+          Empowering Humans to <br /> Enabling Clarity and Control in Project Management
         </h3>
         <p className="text-gray-700 mb-4">
-          Designing for HANDS AI was an exercise in balancing complexity with clarity. Across family,
-          medical, WIC, and scheduling modules, the goal was never just to streamline workflows — it was to empower
-          human service professionals with tools that feel intuitive, responsive, and unified.
+        Designing My Project Inbox was an exercise in surfacing structure from scattered information. In complex organizational environments—where multiple team members juggle priorities across departments—the system was built to bring coherence, not chaos. It wasn’t just about managing tasks; it was about empowering people to move projects forward with confidence.
         </p>
         <p className="text-gray-700 mb-4">
-          By deeply understanding the real-world constraints of caseworkers and health professionals, this system brings structure
-          to chaos, enabling better care coordination and outcomes.
-        </p>
-        <p className="text-gray-700">
-          This project reaffirmed my belief that great enterprise design isn’t about adding more features —
-          it’s about making the right decisions easier, faster, and more human.
+        By designing a solution that makes projects easy to create, update, assign, and track, we gave users a central place to focus, act, and collaborate. This project reinforced the belief that great enterprise tools don’t just organize information—they reduce decision fatigue, eliminate ambiguity, and create momentum.
         </p>
       </div>
 
@@ -348,19 +345,19 @@ export default function HandsAIPage() {
         <h2 className="text-sm font-semibold uppercase mb-6" style={{ color: '#1976D2' }}>Learning Outcomes</h2>
         <ul className="space-y-4 text-gray-800">
           <li className="flex items-start gap-3">
-            <span>Automated key processes, reducing the manual workload for staff</span>
+            <span>Streamlined project handoff between departments, reducing delays and miscommunication.</span>
           </li>
           <li className="flex items-start gap-3">
-            <span>Enhanced caseworker productivity by simplifying complex tasks</span>
+            <span>Improved visibility into project status and ownership for all stakeholders</span>
           </li>
           <li className="flex items-start gap-3">
-            <span>Ensured that organizational practices align with regulatory standards</span>
+            <span>Empowered teams to take immediate action with quick access to contextual information</span>
           </li>
           <li className="flex items-start gap-3">
-            <span>Transformed interaction with clients, providing timely and personalized services</span>
+            <span>Reduced friction in updating and reassigning projects, encouraging continuous progress</span>
           </li>
           <li className="flex items-start gap-3">
-            <span>Enabled the organization to harness data more effectively</span>
+            <span>Supported accountability with clearly defined project workflows and responsibilities</span>
           </li>
         </ul>
       </div>
