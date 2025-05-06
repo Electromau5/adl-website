@@ -48,7 +48,7 @@ export default function HomePage() {
 
       {/* Carousel Section */}
       <section className="overflow-hidden bg-white py-4">
-        <div className="flex animate-scroll">
+        <div className="flex animate-scroll" style={{ width: '350%', overflowX: 'hidden' }}>
           <div className="flex">
             <img src="/images/Verizon-logo.png" alt="Image 1" className="w-40 sm:w-48 md:w-60 h-40 sm:h-48 md:h-60 mx-2 sm:mx-4 object-contain" />
             <img src="/images/NBCU-logo.png" alt="Image 2" className="w-40 sm:w-48 md:w-60 h-40 sm:h-48 md:h-60 mx-2 sm:mx-4 object-contain" />

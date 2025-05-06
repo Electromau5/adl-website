@@ -9,7 +9,7 @@ const projects = [
     description: "A WIC case management platform powered by a custom AI agent that helps caseworkers serve vulnerable populations.",
     image: "/images/hands-ai/cover.png",
     link: "/hands-ai",
-    tags: ["AI", "Case Management", "Social Services"],
+    tags: ["AI", "Case Management", "Public Healthcare"],
   },
   {
     title: "Insight",
@@ -23,7 +23,7 @@ const projects = [
     description: "A school data platform designed for DOE officials to make fast, informed decisions using predictive AI.",
     image: "/images/my-project-inbox/cover.png",
     link: "/insight",
-    tags: ["AI", "Education", "Data Visualization"],
+    tags: ["Project Management", "Engineering Teams"],
   },
 ];
 
