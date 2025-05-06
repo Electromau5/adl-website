@@ -20,7 +20,7 @@ const projects = [
   },
   {
     title: "My Project Inbox",
-    description: "A school data platform designed for DOE officials to make fast, informed decisions using predictive AI.",
+    description: "A project management platform that streamlines workflows for internal engineering teams",
     image: "/images/my-project-inbox/cover.png",
     link: "/insight",
     tags: ["Project Management", "Engineering Teams"],
@@ -30,7 +30,7 @@ const projects = [
 export default function Work() {
   return (
     <div className="max-w-6xl mx-auto px-6 py-20">
-      <h1 className="text-4xl font-bold mb-4">Selected Work</h1>
+      <h1 className="text-gray-700 text-4xl font-bold mb-4">Selected Work</h1>
       <p className="text-gray-600 text-lg mb-12">
         A collection of recent projects across enterprise AI, education, and government tech—focused on usability, scalability, and outcomes.
       </p>
@@ -48,7 +48,7 @@ export default function Work() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <h3 className="text-gray-600 text-xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-gray-600 text-sm mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, i) => (

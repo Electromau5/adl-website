@@ -9,9 +9,9 @@ export default function InsightPage() {
           Redesigning How Educators Access & Act on Student Insights
         </h1>
         <p className="text-lg text-gray-700 mb-12">
-          District administrators and educators rely on complex data to support students—but too often, crucial trends remain buried under charts, filters, and dashboards. Insight is changing that.
+        {"District administrators and educators rely on complex data to support students—but too often, crucial trends remain buried under charts, filters, and dashboards. Insight is changing that.\n\nThrough its Key Insights feature, the platform uses AI to generate natural-language summaries and targeted recommendations for each dataset—helping users quickly understand what's happening, why it matters, and what actions to take."}
           <br /><br />
-          Through its Key Insights feature, the platform uses AI to generate natural-language summaries and targeted recommendations for each dataset—helping users quickly understand what's happening, why it matters, and what actions to take.
+          {"Through its Key Insights feature, the platform uses AI to generate natural-language summaries and targeted recommendations for each dataset—helping users quickly understand what's happening, why it matters, and what actions to take."}
         </p>
 
         {/* Full-bleed cover image */}
@@ -162,7 +162,7 @@ export default function InsightPage() {
                 className="text-sm font-semibold uppercase tracking-wide mb-2"
                 style={{ color: '#1976D2' }}
               >
-                User Research
+                User Research 
               </h2>
               <hr className="mb-6 border-gray-300" />
               <h3 className="text-3xl font-bold mb-4">
