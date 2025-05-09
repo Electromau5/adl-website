@@ -10,9 +10,10 @@ ChartJS.register(ArcElement, Tooltip, Legend)
 interface Props {
     label: string
     value: number
+    color: string
 }
 
-export default function MilestoneCard({ label, value }: Props) {
+export default function MilestoneCard({ label, value, color }: Props) {
     const { ref, inView } = useInView({ triggerOnce: false })
     const [displayValue, setDisplayValue] = useState(0)
     const intervalRef = useRef<NodeJS.Timeout | null>(null)
@@ -46,7 +47,7 @@ export default function MilestoneCard({ label, value }: Props) {
         datasets: [
             {
                 data: [displayValue, 100 - displayValue],
-                backgroundColor: ['#4CAF50', '#E0E0E0'],
+                backgroundColor: [color, '#E0E0E0'],
                 borderWidth: 0,
             },
         ],
@@ -54,7 +55,7 @@ export default function MilestoneCard({ label, value }: Props) {
 
     const options = {
         animation: false,
-        cutout: '70%',
+        cutout: '85%',
         plugins: {
             legend: { display: false },
             tooltip: { enabled: false },
@@ -66,11 +67,13 @@ export default function MilestoneCard({ label, value }: Props) {
             ref={ref}
             className="flex flex-col items-center justify-center bg-white shadow-md rounded-xl p-6 transition-all"
         >
-            <div className="w-32 h-32 mb-4">
+            <div className="relative w-40 h-40 mb-4">
                 <Doughnut data={data} options={options} />
+                <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-3xl font-medium">{displayValue}%</span>
+                </div>
             </div>
             <h3 className="text-lg font-semibold">{label}</h3>
-            <p className="text-sm text-gray-600">{displayValue}%</p>
         </div>
     )
 }

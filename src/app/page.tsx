@@ -43,6 +43,7 @@ export default function HomePage() {
               Let&apos;s Go
             </button>
           </div>
+
         </div>
       </section>
 
@@ -104,21 +105,21 @@ export default function HomePage() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
           <div className="flex flex-col items-start text-left">
-            <img src="/images/test-image.png" alt="Early Stage Design" className="mb-4 sm:mb-6 rounded-lg shadow-md w-full h-auto" />
+            <img src="/images/feature-1.png" alt="Early Stage Design" className="mb-4 sm:mb-6 rounded-lg shadow-md w-full h-auto" />
             <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-left" style={{ fontFamily: 'Inter, sans-serif' }}>Where Scalability Meets Elegance</h3>
             <p className="text-gray-900 text-sm sm:text-base" style={{ fontFamily: 'Inter, sans-serif' }}>
               We help Enterprise AI startups build pixel-perfect, scalable design systems that rival the polish and usability of world-class enterprise platforms.
             </p>
           </div>
           <div className="flex flex-col items-start text-left">
-            <img src="/images/test-image.png" alt="Foundation to Market Leader" className="mb-4 sm:mb-6 rounded-lg shadow-md w-full h-auto" />
+            <img src="/images/feature-2.png" alt="Foundation to Market Leader" className="mb-4 sm:mb-6 rounded-lg shadow-md w-full h-auto" />
             <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-left" style={{ fontFamily: 'Inter, sans-serif' }}>Set the Foundation, Lead the Market</h3>
             <p className="text-gray-900 text-sm sm:text-base" style={{ fontFamily: 'Inter, sans-serif' }}>
               We treat your product like a future market leader—establishing a strategic design foundation that evolves with your team, tech, and users.
             </p>
           </div>
           <div className="flex flex-col items-start text-left">
-            <img src="/images/test-image.png" alt="Scalable Design" className="mb-4 sm:mb-6 rounded-lg shadow-md w-full h-auto" />
+            <img src="/images/feature-3.png" alt="Scalable Design" className="mb-4 sm:mb-6 rounded-lg shadow-md w-full h-auto" />
             <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-left" style={{ fontFamily: 'Inter, sans-serif' }}>Build Beautiful, Scale Seamlessly</h3>
             <p className="text-gray-900 text-sm sm:text-base" style={{ fontFamily: 'Inter, sans-serif' }}>
               We design enterprise software that&rsquo;s as intuitive and elegant as consumer apps—built to grow with your product and captivate your users from day one.
