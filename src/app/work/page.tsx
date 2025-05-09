@@ -22,7 +22,7 @@ const projects = [
     title: "My Project Inbox",
     description: "A project management platform that streamlines workflows for internal engineering teams",
     image: "/images/my-project-inbox/cover.png",
-    link: "/insight",
+    link: "/my-project-inbox",
     tags: ["Project Management", "Engineering Teams"],
   },
 ];
