@@ -8,10 +8,10 @@ export default function Header() {
 
   return (
     <header className="bg-white border-b border-gray-300 sticky top-0 z-50">
-      <div className="w-full px-2 lg:px-8 flex justify-between items-center h-20">
+      <div className="w-full pl-2 pr-8 lg:px-8 flex justify-between items-center h-15">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
-          <img src="/images/logos/adl-logo-1.png" alt="Artemis Design Labs Logo" className="h-20 w-auto" />
+          <img src="/images/logos/adl-logo-1.png" alt="Artemis Design Labs Logo" className="h-15 w-auto" />
         </Link>
 
         {/* Desktop Nav */}

@@ -8,16 +8,15 @@ import Milestones from './components/Milestones'
 // Example: <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 export default function HomePage() {
-  /*
   const scrollToAbout = () => {
     const section = document.getElementById('about')
     if (section) section.scrollIntoView({ behavior: 'smooth' })
   }
-  */
+
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen w-full overflow-hidden flex flex-col md:flex-row">
+      <section className="relative min-h-screen w-full overflow-hidden flex flex-col md:flex-row mt-[-80px]">
         {/* Image Container */}
         <div className="flex-1 flex items-center justify-center order-2 md:order-1">
           <img
@@ -28,7 +27,7 @@ export default function HomePage() {
         </div>
 
         {/* Text Container */}
-        <div className="flex-1 flex items-center justify-center bg-white/10 backdrop-blur-xs p-6 sm:p-8 md:p-12 lg:p-16 order-1 md:order-2">
+        <div className="flex-1 flex items-center justify-center bg-white/10 backdrop-blur-xs p-6 sm:p-8 md:p-12 lg:p-16 order-1 md:order-2 mt-10">
           <div className="max-w-lg text-center md:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-snug mb-6 md:mb-8" style={{ fontFamily: 'Inter, sans-serif' }}>
               Working with AI <br /> Should be Seamless
@@ -39,11 +38,13 @@ export default function HomePage() {
             <p className="text-black text-sm sm:text-base mb-6" style={{ fontFamily: 'Inter, sans-serif' }}>
               With over 10+ years as Enterprise Designers, we understand that design is the foundation of every successful product.
             </p>
-            <button className="bg-black text-white font-semibold px-4 sm:px-6 py-2 rounded-lg hover:bg-gray-800 transition">
+            <button
+              className="bg-black text-white font-semibold px-4 sm:px-6 py-2 rounded-lg hover:bg-gray-800 transition"
+              onClick={scrollToAbout}
+            >
               Let&apos;s Go
             </button>
           </div>
-
         </div>
       </section>
 

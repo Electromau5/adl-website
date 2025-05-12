@@ -3,7 +3,7 @@
 import MilestoneCard from './MilestoneCard'
 
 const milestones = [
-    { label: 'Projects Completed', value: 92, color: '#FF6384' },
+    { label: 'Projects Launched', value: 17, color: '#FF6384' },
     { label: 'Client Retention', value: 85, color: '#36A2EB' },
     { label: 'Design Systems Built', value: 72, color: '#FFCE56' },
     { label: 'Prototypes Launched', value: 88, color: '#4BC0C0' },
