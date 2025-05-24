@@ -53,12 +53,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* What We Do */}
-      <section className="px-6 sm:px-12 md:px-24 py-20 text-center">
-        <h2 className="text-3xl sm:text-4xl font-semibold mb-6">Design Built for Scale, Speed & Strategy</h2>
-        <p className="text-lg max-w-3xl mx-auto">
-          From MVPs to full-scale systems, ADL embeds into your team to ship enterprise-grade UX at startup speed—designed to drive adoption, trust, and business outcomes in AI.
-        </p>
+      <section id="about" className="px-6 sm:px-12 md:px-24 py-20 bg-white text-left">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* Image */}
+          <div>
+            <img src="/images/who-we-are.png" alt="Who we are" className="rounded-xl shadow-md w-full" />
+          </div>
+
+          {/* Text */}
+          <div>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6">Designing for What’s Next in AI</h2>
+            <p className="text-base sm:text-lg mb-4">
+              Artemis Design Labs is a UX design agency built for early to mid-stage startups creating AI-powered enterprise software.
+            </p>
+            <p className="text-base sm:text-lg mb-4">
+              We embed directly into your product team to design user experiences that are simple, strategic, and scalable—from MVP to mature platform.
+            </p>
+            <p className="text-base sm:text-lg mb-4">
+              Our team has designed for some of the most complex enterprise systems in the world, with 100,000+ users impacted across industries like telecom, government, finance, and education.
+            </p>
+            <p className="text-base sm:text-lg">
+              Whether you're launching fast or scaling thoughtfully, we build the design foundation that grows with you—focusing on usability, accessibility, and product performance.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Differentiators Grid */}
@@ -78,27 +96,6 @@ export default function HomePage() {
               <p className="text-sm text-gray-700">{desc}</p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* About Us */}
-      <section id="about" className="px-6 sm:px-12 md:px-24 py-20 bg-white text-left">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <img src="/images/who-we-are.png" alt="Who we are" className="rounded-xl shadow-md w-full" />
-          </div>
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Who We Are</h2>
-            <p className="mb-4">
-              Artemis Design Labs was built specifically for founders and product teams building AI-powered enterprise software.
-            </p>
-            <p className="mb-4">
-              We've worked with Fortune 500s and public institutions alike—designing enterprise platforms used by 100,000+ users. Our strength lies in balancing scale, speed, and human-centered design in high-stakes environments.
-            </p>
-            <p>
-              Whether launching something new or cleaning up legacy UX, we become part of your team—fast, flexible, and focused on outcomes.
-            </p>
-          </div>
         </div>
       </section>
 
