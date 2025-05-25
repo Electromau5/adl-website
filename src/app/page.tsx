@@ -1,6 +1,7 @@
 'use client'
 
 import Milestones from './components/Milestones'
+import ServiceSection from './components/ServiceSection'
 
 export default function HomePage() {
   const scrollToAbout = () => {
@@ -98,6 +99,9 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+       {/* Services */}
+       <ServiceSection />
 
       {/* Milestones */}
       <Milestones />
