@@ -2,6 +2,7 @@
 
 import Milestones from './components/Milestones'
 import ServiceSection from './components/ServiceSection'
+import AboutUsSection from './components/About/about'
 
 export default function HomePage() {
   const scrollToAbout = () => {
@@ -46,37 +47,49 @@ export default function HomePage() {
         </div>
       </section>
 
+      <AboutUsSection />
+
       {/* Client Logos */}
-      <section className="overflow-hidden bg-white py-6">
-        {/* Keep existing carousel */}
-        <div className="flex animate-scroll" style={{ width: '400%' }}>
-          {/* [existing client logo divs here — unchanged] */}
-        </div>
-      </section>
-
-      <section id="about" className="px-6 sm:px-12 md:px-24 py-20 bg-white text-left">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Image */}
-          <div>
-            <img src="/images/who-we-are.png" alt="Who we are" className="rounded-xl shadow-md w-full" />
-          </div>
-
-          {/* Text */}
-          <div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">Designing for What’s Next in AI</h2>
-            <p className="text-base sm:text-lg mb-4">
-              Artemis Design Labs is a UX design agency built for early to mid-stage startups creating AI-powered enterprise software.
-            </p>
-            <p className="text-base sm:text-lg mb-4">
-              We embed directly into your product team to design user experiences that are simple, strategic, and scalable—from MVP to mature platform.
-            </p>
-            <p className="text-base sm:text-lg mb-4">
-              Our team has designed for some of the most complex enterprise systems in the world, with 100,000+ users impacted across industries like telecom, government, finance, and education.
-            </p>
-            <p className="text-base sm:text-lg">
-              Whether you're launching fast or scaling thoughtfully, we build the design foundation that grows with you—focusing on usability, accessibility, and product performance.
-            </p>
-          </div>
+      <section className="overflow-hidden bg-white py-12">
+        <div className="flex animate-scroll space-x-16">
+          {/* First set of logos */}
+          {[
+            '/images/AT&T-Logo.png',
+            '/images/Verizon-logo.png',
+            '/images/NBCU-logo.png',
+            '/images/NYCPS-logo.png',
+            '/images/NYCERS-logo.png',
+            '/images/CMA-logo.png',
+            '/images/Qualitrol-logo.png',
+            '/images/Freshop-logo.png',
+          ].map((logo, index) => (
+            <div key={`first-${index}`} className="flex-shrink-0">
+              <img
+                src={logo}
+                alt="Client Logo"
+                className="h-32 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+          ))}
+          {/* Duplicate set for seamless loop */}
+          {[
+            '/images/AT&T-Logo.png',
+            '/images/Verizon-logo.png',
+            '/images/NBCU-logo.png',
+            '/images/NYCPS-logo.png',
+            '/images/NYCERS-logo.png',
+            '/images/CMA-logo.png',
+            '/images/Qualitrol-logo.png',
+            '/images/Freshop-logo.png',
+          ].map((logo, index) => (
+            <div key={`second-${index}`} className="flex-shrink-0">
+              <img
+                src={logo}
+                alt="Client Logo"
+                className="h-32 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+          ))}
         </div>
       </section>
 
@@ -99,9 +112,6 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-
-       {/* Services */}
-       <ServiceSection />
 
       {/* Milestones */}
       <Milestones />

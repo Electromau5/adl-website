@@ -29,13 +29,13 @@ const projects = [
     tags: ["Project Management", "Engineering Teams"],
   },
 ];
-
 export default function Work() {
   return (
     <div className="bg-white text-black px-6 py-16">
       {/* Section Label */}
       <div className="pb-8 mb-24 max-w-screen-xl mx-auto">
-        <h3 className="uppercase text-[35px] tracking-wide text-black-500 mb-2 font-medium">Our Work</h3>
+    
+      <h1 className="text-3xl font-bold mb-6">Our Work</h1>
         <div className="border-b border-gray-300 mb-16"></div>
 
         {/* Hero Layout */}
