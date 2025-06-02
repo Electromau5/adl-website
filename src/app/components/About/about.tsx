@@ -1,7 +1,7 @@
 // components/AboutUsSection.tsx
 export default function AboutUsSection() {
     return (
-      <section className="bg-gray-100 py-20">
+      <section className="bg-white py-20">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">About Us</h2>
           <div className="max-w-2xl mx-auto">

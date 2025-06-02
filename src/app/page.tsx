@@ -67,7 +67,7 @@ export default function HomePage() {
               <img
                 src={logo}
                 alt="Client Logo"
-                className="h-32 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                className="h-40 object-contain grayscale hover:grayscale-0 transition-all duration-300"
               />
             </div>
           ))}
@@ -86,7 +86,7 @@ export default function HomePage() {
               <img
                 src={logo}
                 alt="Client Logo"
-                className="h-32 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                className="h-40 object-contain grayscale hover:grayscale-0 transition-all duration-300"
               />
             </div>
           ))}
@@ -94,22 +94,24 @@ export default function HomePage() {
       </section>
 
       {/* Differentiators Grid */}
-      <section className="px-6 sm:px-12 md:px-24 py-12 bg-gray-50">
-        <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-10">What Sets Us Apart</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {[
-            ['Rapid MVP Design', 'Ship lean, scalable MVPs in 8–12 sprint cycles to validate fast.'],
-            ['Outcome-Focused UX', 'Align design with conversion, adoption, and retention KPIs.'],
-            ['Unified Brand + Product', 'Deliver consistency across touchpoints for instant trust.'],
-            ['Embedded UX Teams', 'Plug directly into your workflow as your product evolves.'],
-            ['AI-Specific Expertise', 'Design explainable, intuitive, and compliant AI experiences.'],
-            ['Human-Machine Interaction', 'Bridge complexity with simplicity through cognitive design.'],
-          ].map(([title, desc]) => (
-            <div key={title}>
-              <h3 className="text-xl font-semibold mb-2">{title}</h3>
-              <p className="text-sm text-gray-700">{desc}</p>
-            </div>
-          ))}
+      <section className="px-6 sm:px-12 md:px-24 py-12 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-10">What Sets Us Apart</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {[
+              ['Rapid MVP Design', 'Ship lean, scalable MVPs in 8–12 sprint cycles to validate fast.'],
+              ['Outcome-Focused UX', 'Align design with conversion, adoption, and retention KPIs.'],
+              ['Unified Brand + Product', 'Deliver consistency across touchpoints for instant trust.'],
+              ['Embedded UX Teams', 'Plug directly into your workflow as your product evolves.'],
+              ['AI-Specific Expertise', 'Design explainable, intuitive, and compliant AI experiences.'],
+              ['Human-Machine Interaction', 'Bridge complexity with simplicity through cognitive design.'],
+            ].map(([title, desc]) => (
+              <div key={title}>
+                <h3 className="text-xl font-semibold mb-2">{title}</h3>
+                <p className="text-sm text-gray-700">{desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

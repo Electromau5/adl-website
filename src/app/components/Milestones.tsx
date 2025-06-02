@@ -32,7 +32,7 @@ export default function Milestones() {
         {milestones.map((milestone, index) => (
           <div
             key={index}
-            className="border p-6 rounded-lg hover:shadow-md transition"
+            className="border border-gray-200 p-6 rounded-lg hover:shadow-md transition"
           >
             <Image
               src={milestone.icon}

@@ -63,10 +63,10 @@ export default function Work() {
 
       {/* Project Cards */}
       <div className="max-w-screen-xl mx-auto">
-        {projects.map((project, idx) => (
-          <div key={idx} className="mt-[160px] first:mt-0">
-            <Link href={project.link}>
-              <div className="cursor-pointer group w-full max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          {projects.map((project, idx) => (
+            <Link key={idx} href={project.link}>
+              <div className="cursor-pointer group w-full">
                 {/* Image */}
                 <div className="relative w-full h-[480px] rounded-xl overflow-hidden">
                   <Image
@@ -94,8 +94,8 @@ export default function Work() {
                 </div>
               </div>
             </Link>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
