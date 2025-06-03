@@ -5,32 +5,38 @@ import { useState } from 'react';
 export default function ContactPage() {
   const [form, setForm] = useState({ name: '', company: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
-  /*
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-*/
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setError('');
 
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form),
-    });
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
 
-    if (res.ok) {
-      setSubmitted(true);
-      setForm({ name: '', company: '', email: '', message: '' });
-    } else {
-      const error = await res.json();
-      console.error('Form submission failed:', error); // 👈 Add this
+      if (res.ok) {
+        setSubmitted(true);
+        setForm({ name: '', company: '', email: '', message: '' });
+      } else {
+        const data = await res.json();
+        setError(data?.message || 'Submission failed.');
+      }
+    } catch (err) {
+      setError('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
-
 
   return (
     <div className="min-h-screen bg-white px-4 py-20">
