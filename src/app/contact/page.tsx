@@ -5,22 +5,23 @@ import { useState } from 'react';
 export default function ContactPage() {
   const [form, setForm] = useState({ name: '', company: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  /*
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+*/
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
+
     const res = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form),
     });
-  
+
     if (res.ok) {
       setSubmitted(true);
       setForm({ name: '', company: '', email: '', message: '' });
@@ -29,7 +30,7 @@ export default function ContactPage() {
       console.error('Form submission failed:', error); // 👈 Add this
     }
   };
-  
+
 
   return (
     <div className="min-h-screen bg-white px-4 py-20">
@@ -48,7 +49,7 @@ export default function ContactPage() {
           {submitted ? (
             <div className="text-center">
               <p className="text-green-600 text-lg mb-2">Thanks for reaching out!</p>
-              <p className="text-gray-600">We'll get back to you soon.</p>
+              <p className="text-gray-600">We&rsquo;ll get back to you soon.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">

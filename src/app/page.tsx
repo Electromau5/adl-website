@@ -1,7 +1,6 @@
 'use client'
 
 import Milestones from './components/Milestones'
-import ServiceSection from './components/ServiceSection'
 import AboutUsSection from './components/About/about'
 
 export default function HomePage() {
@@ -42,7 +41,7 @@ export default function HomePage() {
             onClick={scrollToAbout}
             className="bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-200 transition font-inter font-medium"
           >
-            Let's Work Together
+            Let&rsquo;s Work Together
           </button>
         </div>
       </section>
@@ -120,9 +119,9 @@ export default function HomePage() {
 
       {/* Final CTA */}
       <section className="px-6 sm:px-12 md:px-24 py-20 text-center bg-black text-white">
-        <h2 className="text-3xl sm:text-4xl font-semibold mb-6">Ready to Design What's Next in AI?</h2>
+        <h2 className="text-3xl sm:text-4xl font-semibold mb-6">Ready to Design What&rsquo;s Next in AI?</h2>
         <p className="text-lg max-w-2xl mx-auto mb-8">
-          Book a call with our team and let's explore how we can bring your product vision to life—faster, simpler, and more strategically.
+          Book a call with our team and let&rsquo;s explore how we can bring your product vision to life—faster, simpler, and more strategically.
         </p>
         <button className="bg-white text-black font-medium px-6 py-3 rounded-lg hover:bg-gray-200 transition">
           Book a Discovery Call
