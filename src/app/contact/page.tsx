@@ -3,134 +3,94 @@
 import { useState } from 'react';
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: '', company: '', email: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(''); // ✅ Fix: Declare error state
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setError('');
+    setSuccess(false);
+    setError(''); // Clear previous errors
 
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ name, email, message }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
       });
 
-      if (res.ok) {
-        setSubmitted(true);
-        setForm({ name: '', company: '', email: '', message: '' });
-      } else {
-        const data = await res.json();
-        setError(data?.message || 'Submission failed.');
-      }
+      if (!res.ok) throw new Error('Failed to submit form');
+
+      setSuccess(true);
+      setName('');
+      setEmail('');
+      setMessage('');
     } catch (err) {
-      setError('Something went wrong. Please try again.');
-    } finally {
-      setIsSubmitting(false);
+      console.error('Form submission error:', err);
+      setError('Something went wrong. Please try again later.'); // ✅ Set error
     }
   };
 
   return (
-    <div className="min-h-screen bg-white px-4 py-20">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Left Text Block */}
-        <div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h1>
-          <p className="text-gray-600 text-lg">
-            This is a space to welcome visitors to the site. Grab their attention with copy that clearly states
-            what the site is about, and add an engaging image or video.
-          </p>
+    <div className="max-w-xl mx-auto px-4 py-12">
+      <h1 className="text-3xl font-semibold mb-6">Contact Us</h1>
+      {success ? (
+        <div className="bg-green-50 text-green-700 p-4 rounded-md text-sm">
+          Your message has been sent!
         </div>
-
-        {/* Right Form Block */}
-        <div className="bg-white shadow-md rounded-xl p-8 w-full">
-          {submitted ? (
-            <div className="text-center">
-              <p className="text-green-600 text-lg mb-2">Thanks for reaching out!</p>
-              <p className="text-gray-600">We&rsquo;ll get back to you soon.</p>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {error && (
+            <div className="bg-red-50 text-red-600 p-4 rounded-md text-sm">
+              {error}
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {error && (
-                <div className="bg-red-50 text-red-600 p-4 rounded-md text-sm">
-                  {error}
-                </div>
-              )}
-
-              {/* Name + Company */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Name</label>
-                  <input
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                    className="w-full border border-gray-300 px-4 py-2 rounded-md"
-                    required
-                    disabled={isSubmitting}
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">Company</label>
-                  <input
-                    name="company"
-                    value={form.company}
-                    onChange={handleChange}
-                    className="w-full border border-gray-300 px-4 py-2 rounded-md"
-                    disabled={isSubmitting}
-                  />
-                </div>
-              </div>
-
-              {/* Email */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Email</label>
-                <input
-                  name="email"
-                  type="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  className="w-full border border-gray-300 px-4 py-2 rounded-md"
-                  required
-                  disabled={isSubmitting}
-                />
-              </div>
-
-              {/* Message */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Message</label>
-                <textarea
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                  className="w-full border border-gray-300 px-4 py-2 rounded-md h-32"
-                  required
-                  disabled={isSubmitting}
-                />
-              </div>
-
-              {/* Submit Button */}
-              <div>
-                <button
-                  type="submit"
-                  className="bg-black text-white px-6 py-2 rounded-md hover:bg-gray-900 disabled:opacity-50 disabled:cursor-not-allowed"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? 'Submitting...' : 'Submit'}
-                </button>
-              </div>
-            </form>
           )}
-        </div>
-      </div>
+
+          <div>
+            <label className="block mb-1 text-sm font-medium">Name</label>
+            <input
+              type="text"
+              className="w-full border px-4 py-2 rounded-md"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+
+          <div>
+            <label className="block mb-1 text-sm font-medium">Email</label>
+            <input
+              type="email"
+              className="w-full border px-4 py-2 rounded-md"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+
+          <div>
+            <label className="block mb-1 text-sm font-medium">Message</label>
+            <textarea
+              className="w-full border px-4 py-2 rounded-md"
+              rows={5}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="bg-black text-white px-6 py-2 rounded-md hover:bg-gray-800"
+          >
+            Send
+          </button>
+        </form>
+      )}
     </div>
   );
 }
