@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-
+import SectionHeader from "@/app/components/molecules/SectionHeader";
 const projects = [
   {
     title: "HANDS AI",
@@ -35,8 +35,11 @@ export default function Work() {
       {/* Section Label */}
       <div className="pb-8 mb-24 max-w-screen-xl mx-auto">
     
-      <h1 className="text-3xl font-bold mb-6">Our Work</h1>
-        <div className="border-b border-gray-300 mb-16"></div>
+      {/* Component - Section Header */}
+                     
+      <SectionHeader title="OUR WORK" />
+               
+      {/* Component - Section Header */}
 
         {/* Hero Layout */}
         <div className="grid md:grid-cols-2 gap-16 max-w-screen-xl mx-auto">

@@ -1,4 +1,6 @@
 "use client"
+
+import SectionHeader from "@/app/components/molecules/SectionHeader"
 import { useState } from "react"
 
 const servicesData = [
@@ -90,10 +92,12 @@ export default function ServicesTabs() {
   return (
     <section className="px-6 py-16 bg-[#f8fcfd] font-sans text-gray-800">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-xl font-semibold tracking-wide mb-2 uppercase">
-          Our Services
-        </h2>
-        <hr className="mb-10 border-t border-gray-300" />
+           {/* Component - Section Header */}
+              
+            <SectionHeader title="OUR SERVICES" />
+        
+          {/* Component - Section Header */}
+
 
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Left Navigation */}

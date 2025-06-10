@@ -1,4 +1,4 @@
-import Work from "../components/Work/Work";
+import Work from "../components/templates/Work/Work";
 
 export default function Home() {
   return (

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import SectionHeader from '../molecules/SectionHeader';
 
 const milestones = Array(6).fill({
   title: 'Milestone',
@@ -12,10 +13,14 @@ const milestones = Array(6).fill({
 export default function Milestones() {
   return (
     <section className="px-6 py-12 max-w-7xl mx-auto">
+      {/* Component - Section Header */}
+      
+        <SectionHeader title="OUR ACHIEVEMENTS" />
+
+      {/* Component - Section Header */}
+
+      {/* Introductory Text */}
       <div className="mb-12">
-        <p className="text-sm uppercase font-medium tracking-wide text-gray-700 border-b pb-2 mb-4">
-          Our Achievements
-        </p>
         <h2 className="text-xl font-semibold mb-2">Milestones</h2>
         <h3 className="text-3xl font-bold mb-4">
           From Startups to Titans of Industries
@@ -28,6 +33,7 @@ export default function Milestones() {
         </p>
       </div>
 
+      {/* Milestone Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {milestones.map((milestone, index) => (
           <div

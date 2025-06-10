@@ -1,8 +1,9 @@
 'use client'
 
-import Milestones from './components/Milestones'
-import ServiceSection from './components/ServiceSection'
-import AboutUsSection from './components/About/about'
+import Milestones from './components/templates/Milestones'
+import SectionHeader from './components/molecules/SectionHeader'
+import AboutUsSection from './components/templates/About/about'
+import BannerHeader from './components/molecules/BannerHeader';
 
 export default function HomePage() {
   const scrollToAbout = () => {
@@ -32,9 +33,12 @@ export default function HomePage() {
 
         {/* Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white whitespace-nowrap sm:whitespace-normal w-full text-center font-space-grotesk">
-            Working with AI Should be Seamless.
-          </h1>
+        <main className="py-24">
+  <div className="max-w-15xl mx-auto px-4 text-center">
+    <BannerHeader text="We make Enterprise AI more Human-Centered" />
+  </div>
+</main>
+
           <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-6 text-white font-jakarta">
             Artemis Design Labs partners with AI-focused SaaS startups to build product-ready user experiences that scale with your business and differentiate you in a competitive landscape.
           </p>
@@ -96,7 +100,11 @@ export default function HomePage() {
       {/* Differentiators Grid */}
       <section className="px-6 sm:px-12 md:px-24 py-12 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-10">What Sets Us Apart</h2>
+             {/* Component - Section Header */}
+                
+                  <SectionHeader title="WHAT SETS US APART" />
+          
+                {/* Component - Section Header */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {[
               ['Rapid MVP Design', 'Ship lean, scalable MVPs in 8–12 sprint cycles to validate fast.'],
