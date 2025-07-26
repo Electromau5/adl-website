@@ -22,6 +22,15 @@ export default function Header() {
           <Link href="/services">
             <span className="font-medium text-gray-600 hover:text-black text-base">Services</span>
           </Link>
+          <Link href="/marketplace">
+            <span className="font-medium text-gray-600 hover:text-black text-base">Marketplace</span>
+          </Link>
+          <Link href="/design-system-license">
+            <span className="font-medium text-gray-600 hover:text-black text-base">Design System License</span>
+          </Link>
+          <Link href="/publication">
+            <span className="font-medium text-gray-600 hover:text-black text-base">Publication</span>
+          </Link>
           <Link href="/contact">
             <span className="font-medium text-gray-600 hover:text-black text-base">Contact</span>
           </Link>
@@ -60,6 +69,15 @@ export default function Header() {
           </Link>
           <Link href="/services">
             <span className="text-gray-700 hover:text-black text-base">Services</span>
+          </Link>
+          <Link href="/marketplace">
+            <span className="text-gray-700 hover:text-black text-base">Marketplace</span>
+          </Link>
+          <Link href="/design-system-license">
+            <span className="text-gray-700 hover:text-black text-base">Design System License</span>
+          </Link>
+          <Link href="/publication">
+            <span className="text-gray-700 hover:text-black text-base">Publication</span>
           </Link>
           <Link href="/contact">
             <span className="text-gray-700 hover:text-black text-base">Contact</span>
