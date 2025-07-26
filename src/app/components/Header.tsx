@@ -5,6 +5,7 @@ import { useState } from 'react'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isServicesOpen, setIsServicesOpen] = useState(false)
 
   return (
     <header className="bg-white border-b border-gray-300 sticky top-0 z-50">
@@ -19,9 +20,33 @@ export default function Header() {
           <Link href="/work">
             <span className="font-medium text-gray-600 hover:text-black text-base">Work</span>
           </Link>
-          <Link href="/services">
-            <span className="font-medium text-gray-600 hover:text-black text-base">Services</span>
-          </Link>
+          <div className="relative">
+            <button
+              onClick={() => setIsServicesOpen(!isServicesOpen)}
+              className="font-medium text-gray-600 hover:text-black text-base flex items-center"
+            >
+              Services
+              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {isServicesOpen && (
+              <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                <Link href="/services/rapid-mvp-design" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  Rapid MVP Design
+                </Link>
+                <Link href="/services/design-systems" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  Design Systems
+                </Link>
+                <Link href="/services/product-redesign" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  Product Redesign
+                </Link>
+                <Link href="/services/end-to-end-ux" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  End-to-End UX
+                </Link>
+              </div>
+            )}
+          </div>
           <Link href="/marketplace">
             <span className="font-medium text-gray-600 hover:text-black text-base">Marketplace</span>
           </Link>
@@ -67,9 +92,33 @@ export default function Header() {
           <Link href="/work">
             <span className="text-gray-700 hover:text-black text-base">Work</span>
           </Link>
-          <Link href="/services">
-            <span className="text-gray-700 hover:text-black text-base">Services</span>
-          </Link>
+          <div>
+            <button
+              onClick={() => setIsServicesOpen(!isServicesOpen)}
+              className="text-gray-700 hover:text-black text-base flex items-center justify-between w-full"
+            >
+              Services
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {isServicesOpen && (
+              <div className="ml-4 mt-2 space-y-2">
+                <Link href="/services/rapid-mvp-design" className="block text-sm text-gray-600 hover:text-black">
+                  Rapid MVP Design
+                </Link>
+                <Link href="/services/design-systems" className="block text-sm text-gray-600 hover:text-black">
+                  Design Systems
+                </Link>
+                <Link href="/services/product-redesign" className="block text-sm text-gray-600 hover:text-black">
+                  Product Redesign
+                </Link>
+                <Link href="/services/end-to-end-ux" className="block text-sm text-gray-600 hover:text-black">
+                  End-to-End UX
+                </Link>
+              </div>
+            )}
+          </div>
           <Link href="/marketplace">
             <span className="text-gray-700 hover:text-black text-base">Marketplace</span>
           </Link>

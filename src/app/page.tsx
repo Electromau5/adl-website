@@ -12,37 +12,36 @@ export default function HomePage() {
   return (
     <div className="bg-white text-black">
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 sm:px-12 md:px-24 pt-12 relative overflow-hidden">
-        {/* Background Video */}
-        <div className="absolute inset-0 w-full h-full z-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute min-w-full min-h-full object-cover"
-            style={{ filter: 'brightness(0.7)' }}
-          >
-            <source src="/videos/banner-video.mp4" type="video/mp4" />
-          </video>
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/30"></div>
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white whitespace-nowrap sm:whitespace-normal w-full text-center font-space-grotesk">
-            Working with AI Should be Seamless.
+      <section className="min-h-screen flex flex-col justify-center items-start text-left px-6 sm:px-12 md:px-24 py-20 bg-black">
+        <div className="max-w-6xl mx-auto">
+          {/* Main Headline */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 font-space-grotesk">
+            <span className="text-white">Accelerate AI product development from concept to production</span>
+            <br />
+            <span className="text-green-500">by removing design bottlenecks</span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-6 text-white font-jakarta">
-            Artemis Design Labs partners with AI-focused SaaS startups to build product-ready user experiences that scale with your business and differentiate you in a competitive landscape.
+
+          {/* Supporting Text */}
+          <p className="text-lg sm:text-xl md:text-2xl max-w-4xl mb-12 text-gray-300 font-jakarta leading-relaxed">
+            We partner with AI-focused teams to transform complex workflows into
+            intuitive experiences that accelerate time-to-market and user adoption.
           </p>
-          <button
-            onClick={scrollToAbout}
-            className="bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-200 transition font-inter font-medium"
-          >
-            Let&rsquo;s Work Together
-          </button>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-start items-start">
+            <button
+              onClick={scrollToAbout}
+              className="bg-white text-black px-8 py-4 rounded-lg hover:bg-gray-200 transition-all duration-300 font-inter font-medium text-lg"
+            >
+              Start Your Project
+            </button>
+            <button
+              onClick={scrollToAbout}
+              className="border-2 border-gray-400 text-white px-8 py-4 rounded-lg hover:border-gray-300 hover:bg-gray-800 transition-all duration-300 font-inter font-medium text-lg"
+            >
+              View Our Work
+            </button>
+          </div>
         </div>
       </section>
 
