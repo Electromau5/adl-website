@@ -1,5 +1,7 @@
 import PrimaryHeader from '../../molecules/PrimaryHeader';
+import Button from '../../atoms/Button';
 import Paragraph from '../../molecules/Paragraph';
+
 
 export default function AboutUsSection() {
   return (
@@ -16,9 +18,9 @@ export default function AboutUsSection() {
         />
 
         {/* Button */}
-        <button className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition mb-12">
-          Learn more
-        </button>
+        <div className="flex justify-center items-center">
+      <Button text="Learn more" />
+    </div>
 
         {/* Image Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
