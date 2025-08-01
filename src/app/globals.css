@@ -65,6 +65,7 @@ body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -119,22 +120,30 @@ body {
 }
 
 @keyframes initialFade {
-  0%, 40% {
+
+  0%,
+  40% {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
   }
-  45%, 100% {
+
+  45%,
+  100% {
     opacity: 0;
     transform: translateX(-50%) translateY(-20px);
   }
 }
 
 @keyframes partFade {
-  0%, 40% {
+
+  0%,
+  40% {
     opacity: 0;
     transform: translateX(-50%) translateY(20px);
   }
-  45%, 100% {
+
+  45%,
+  100% {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
   }
@@ -163,23 +172,131 @@ body {
 }
 
 @keyframes firstWordFade {
-  0%, 40% {
+
+  0%,
+  40% {
     opacity: 1;
     transform: translateY(0);
   }
-  45%, 100% {
+
+  45%,
+  100% {
     opacity: 0;
     transform: translateY(-20px);
   }
 }
 
 @keyframes wordFade {
-  0%, 40% {
+
+  0%,
+  40% {
     opacity: 0;
     transform: translateY(20px);
   }
-  45%, 100% {
+
+  45%,
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Add these new animation styles to your existing globals.css file */
+
+/* Enhanced word animation for hero section */
+.animate-word {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: wordCycle 6s infinite;
+  white-space: nowrap;
+}
+
+.animate-word:first-child {
+  position: relative;
+  opacity: 1;
+  transform: translateY(0);
+  animation: firstWordCycle 6s infinite;
+}
+
+.animate-word:nth-child(2) {
+  animation-delay: 3s;
+}
+
+/* Keyframes for word cycling animation */
+@keyframes firstWordCycle {
+
+  0%,
+  45% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  50%,
+  95% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wordCycle {
+
+  0%,
+  45% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  50%,
+  95% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+/* Floating elements animation */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Responsive adjustments for word animation */
+@media (max-width: 640px) {
+  .animate-word {
+    font-size: 0.9em;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .animate-word {
+    font-size: 1em;
+  }
+}
+
+/* Ensure smooth transitions */
+.animate-word {
+  transition: all 0.3s ease-in-out;
 }

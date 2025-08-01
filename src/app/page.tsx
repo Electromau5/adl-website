@@ -1,11 +1,21 @@
 'use client'
 
-import Milestones from './components/templates/Milestones'
-import SectionHeader from './components/molecules/SectionHeader'
-import AboutUsSection from './components/templates/About/about'
-import BannerHeader from './components/molecules/BannerHeader';
+import Milestones from './components/Milestones'
+import AboutUsSection from './components/About/about'
+import { useState, useEffect } from 'react'
 
 export default function HomePage() {
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  useEffect(() => {
+    // Trigger animation after component mounts
+    const timer = setTimeout(() => {
+      setIsLoaded(true)
+    }, 100)
+
+    return () => clearTimeout(timer)
+  }, [])
+
   const scrollToAbout = () => {
     const section = document.getElementById('about')
     if (section) section.scrollIntoView({ behavior: 'smooth' })
@@ -14,40 +24,38 @@ export default function HomePage() {
   return (
     <div className="bg-white text-black">
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 sm:px-12 md:px-24 pt-12 relative overflow-hidden">
-        {/* Background Video */}
-        <div className="absolute inset-0 w-full h-full z-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute min-w-full min-h-full object-cover"
-            style={{ filter: 'brightness(0.7)' }}
-          >
-            <source src="/videos/banner-video.mp4" type="video/mp4" />
-          </video>
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/30"></div>
-        </div>
+      <section className={`min-h-screen flex flex-col justify-center items-start text-left px-6 sm:px-12 md:px-24 py-20 transition-all duration-1000 ease-out ${isLoaded ? 'bg-black' : 'bg-white'
+        }`}>
+        <div className={`max-w-6xl mx-auto transition-all duration-1000 ease-out ${isLoaded ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
+          }`}>
+          {/* Main Headline */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 font-space-grotesk">
+            <span className="text-white">Accelerate AI Product Development</span>
+            <br />
+            <span className="text-green-500">By Removing Design Bottlenecks</span>
+          </h1>
 
-        {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto">
-        <main className="py-24">
-  <div className="max-w-15xl mx-auto px-4 text-center">
-    <BannerHeader text="We make Enterprise AI more Human-Centered" />
-  </div>
-</main>
-
-          <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-6 text-white font-jakarta">
-            Artemis Design Labs partners with AI-focused SaaS startups to build product-ready user experiences that scale with your business and differentiate you in a competitive landscape.
+          {/* Supporting Text */}
+          <p className="text-lg sm:text-xl md:text-2xl max-w-4xl mb-12 text-gray-300 font-jakarta leading-relaxed">
+            We partner with AI-focused teams to transform complex workflows into
+            intuitive experiences that accelerate time-to-market and user adoption.
           </p>
-          <button
-            onClick={scrollToAbout}
-            className="bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-200 transition font-inter font-medium"
-          >
-            Let's Work Together
-          </button>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-start items-start">
+            <button
+              onClick={scrollToAbout}
+              className="bg-white text-black px-8 py-4 rounded-lg hover:bg-gray-200 transition-all duration-300 font-inter font-medium text-lg"
+            >
+              Start Your Project
+            </button>
+            <button
+              onClick={scrollToAbout}
+              className="border-2 border-gray-400 text-white px-8 py-4 rounded-lg hover:border-gray-300 hover:bg-gray-800 transition-all duration-300 font-inter font-medium text-lg"
+            >
+              View Our Work
+            </button>
+          </div>
         </div>
       </section>
 
@@ -128,9 +136,9 @@ export default function HomePage() {
 
       {/* Final CTA */}
       <section className="px-6 sm:px-12 md:px-24 py-20 text-center bg-black text-white">
-        <h2 className="text-3xl sm:text-4xl font-semibold mb-6">Ready to Design What's Next in AI?</h2>
+        <h2 className="text-3xl sm:text-4xl font-semibold mb-6">Ready to Design What&rsquo;s Next in AI?</h2>
         <p className="text-lg max-w-2xl mx-auto mb-8">
-          Book a call with our team and let's explore how we can bring your product vision to life—faster, simpler, and more strategically.
+          Book a call with our team and let&rsquo;s explore how we can bring your product vision to life—faster, simpler, and more strategically.
         </p>
         <button className="bg-white text-black font-medium px-6 py-3 rounded-lg hover:bg-gray-200 transition">
           Book a Discovery Call
