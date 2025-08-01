@@ -1,29 +1,48 @@
 // components/AboutUsSection.tsx
 export default function AboutUsSection() {
   return (
-    <section className="bg-white py-20">
-      <div className="max-w-5xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">About Us</h2>
-        <div className="max-w-2xl mx-auto">
-          <p className="text-base sm:text-lg mb-4">
-            Artemis Design Labs is a UX design agency specializing in AI-powered enterprise software for early to mid-stage startups. We embed with your team to craft simple, scalable, and strategic user experiences—whether you&rsquo;re launching an MVP or growing a mature platform. With experience across telecom, government, finance, and education, we&rsquo;ve designed systems used by 100,000+ users, always prioritizing usability, accessibility, and performance.
+    <section id="about" className="bg-white py-40">
+      <div className="max-w-5xl mx-auto px-6">
+
+        {/* Hero Message - Centered and Powerful */}
+        <div className="text-center mb-32">
+          <h2 className="text-6xl md:text-7xl font-light text-gray-900 mb-12 leading-tight tracking-tight">
+            We believe technology should
+            <span className="block font-medium">feel human</span>
+          </h2>
+
+          <p className="text-2xl md:text-3xl text-gray-500 font-light max-w-3xl mx-auto leading-relaxed">
+            So we design AI experiences that people actually want to use.
           </p>
         </div>
-        <button className="bg-black text-white px-6 py-2 rounded-full mb-16 hover:bg-gray-800 transition">
-          Learn more
-        </button>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          <div className="md:-mt-16">
-            <img src="/images/tests/test-image.png" alt="About visual 1" className="w-full h-[400px] object-cover" />
-          </div>
-          <div>
-            <img src="/images/tests/test-image.png" alt="About visual 2" className="w-full h-[400px] object-cover" />
-          </div>
-          <div className="md:-mt-16">
-            <img src="/images/tests/test-image.png" alt="About visual 3" className="w-full h-[400px] object-cover" />
-          </div>
+        {/* Simple Visual Separator */}
+        <div className="flex justify-center mb-32">
+          <div className="w-px h-24 bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
         </div>
+
+        {/* Philosophy Statement */}
+        <div className="text-center mb-32">
+          <h3 className="text-3xl md:text-4xl font-light text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
+            Every interaction should feel effortless.
+            <span className="block text-gray-900 font-medium mt-4">
+              That's not just our goal—it's our obsession.
+            </span>
+          </h3>
+        </div>
+
+        {/* Elegant CTA */}
+        <div className="text-center">
+          <button className="group bg-gray-900 text-white px-12 py-5 rounded-full hover:bg-gray-800 transition-all duration-500 font-medium text-lg tracking-wide">
+            Let's create something beautiful
+            <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+          </button>
+
+          <p className="text-gray-400 mt-6 text-sm font-light">
+            Usually ready in 8-12 weeks
+          </p>
+        </div>
+
       </div>
     </section>
   );

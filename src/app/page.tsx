@@ -2,8 +2,20 @@
 
 import Milestones from './components/Milestones'
 import AboutUsSection from './components/About/about'
+import { useState, useEffect } from 'react'
 
 export default function HomePage() {
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  useEffect(() => {
+    // Trigger animation after component mounts
+    const timer = setTimeout(() => {
+      setIsLoaded(true)
+    }, 100)
+
+    return () => clearTimeout(timer)
+  }, [])
+
   const scrollToAbout = () => {
     const section = document.getElementById('about')
     if (section) section.scrollIntoView({ behavior: 'smooth' })
@@ -12,13 +24,15 @@ export default function HomePage() {
   return (
     <div className="bg-white text-black">
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col justify-center items-start text-left px-6 sm:px-12 md:px-24 py-20 bg-black">
-        <div className="max-w-6xl mx-auto">
+      <section className={`min-h-screen flex flex-col justify-center items-start text-left px-6 sm:px-12 md:px-24 py-20 transition-all duration-1000 ease-out ${isLoaded ? 'bg-black' : 'bg-white'
+        }`}>
+        <div className={`max-w-6xl mx-auto transition-all duration-1000 ease-out ${isLoaded ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
+          }`}>
           {/* Main Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 font-space-grotesk">
-            <span className="text-white">Accelerate AI product development from concept to production</span>
+            <span className="text-white">Accelerate AI Product Development</span>
             <br />
-            <span className="text-green-500">by removing design bottlenecks</span>
+            <span className="text-green-500">By Removing Design Bottlenecks</span>
           </h1>
 
           {/* Supporting Text */}
