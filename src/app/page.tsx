@@ -1,7 +1,8 @@
 'use client'
 
-import Milestones from './components/Milestones'
+import Milestones from './components/templates/Milestones'
 import AboutUsSection from './components/About/about'
+import SectionHeader from './components/molecules/SectionHeader'
 import { useState, useEffect } from 'react'
 
 export default function HomePage() {
