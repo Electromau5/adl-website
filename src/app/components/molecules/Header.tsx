@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 
 export default function Header() {
@@ -12,7 +13,14 @@ export default function Header() {
       <div className="w-full pl-2 pr-8 lg:px-8 flex justify-between items-center h-15">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
-          <img src="/images/logos/adl-logo-1.png" alt="Artemis Design Labs Logo" className="h-15 w-auto" />
+          <Image
+            src="/images/logos/adl-logo-1.png"
+            alt="Artemis Design Labs Logo"
+            width={150}
+            height={60}
+            className="h-15 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}

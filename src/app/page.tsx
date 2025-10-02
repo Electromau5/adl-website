@@ -3,6 +3,7 @@
 import Milestones from './components/templates/Milestones'
 import AboutUsSection from './components/About/about'
 import SectionHeader from './components/molecules/SectionHeader'
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
 export default function HomePage() {
@@ -77,9 +78,11 @@ export default function HomePage() {
             '/images/Freshop-logo.png',
           ].map((logo, index) => (
             <div key={`first-${index}`} className="flex-shrink-0">
-              <img
+              <Image
                 src={logo}
                 alt="Client Logo"
+                width={200}
+                height={160}
                 className="h-40 object-contain grayscale hover:grayscale-0 transition-all duration-300"
               />
             </div>
@@ -96,9 +99,11 @@ export default function HomePage() {
             '/images/Freshop-logo.png',
           ].map((logo, index) => (
             <div key={`second-${index}`} className="flex-shrink-0">
-              <img
+              <Image
                 src={logo}
                 alt="Client Logo"
+                width={200}
+                height={160}
                 className="h-40 object-contain grayscale hover:grayscale-0 transition-all duration-300"
               />
             </div>

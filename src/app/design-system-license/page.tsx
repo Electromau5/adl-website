@@ -18,7 +18,7 @@ export default function DesignSystemLicensePage() {
                 Unlock our comprehensive Design System for your team. Get access to a robust set of components, documentation, and ongoing updates.
             </p>
             <div className="bg-white shadow rounded-lg p-8 mb-8">
-                <h2 className="text-2xl font-semibold mb-2">What's Included</h2>
+                <h2 className="text-2xl font-semibold mb-2">What&apos;s Included</h2>
                 <ul className="list-disc pl-6 mb-4 text-gray-700">
                     <li>Full Figma file & codebase</li>
                     <li>Reusable React components</li>
@@ -29,7 +29,7 @@ export default function DesignSystemLicensePage() {
                 <div className="text-2xl font-bold mb-2">$299</div>
                 <div className="text-gray-500 mb-4">One-time payment per team</div>
                 {success ? (
-                    <div className="bg-green-50 text-green-700 p-4 rounded-md text-sm">Thank you! We'll contact you soon.</div>
+                    <div className="bg-green-50 text-green-700 p-4 rounded-md text-sm">Thank you! We&apos;ll contact you soon.</div>
                 ) : (
                     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                         <input

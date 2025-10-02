@@ -1,6 +1,7 @@
 "use client"
 
 import SectionHeader from "@/app/components/molecules/SectionHeader"
+import Image from "next/image"
 import { useState } from "react"
 
 const servicesData = [
@@ -131,9 +132,11 @@ export default function ServicesTabs() {
                   key={idx}
                   className="rounded-xl overflow-hidden shadow"
                 >
-                  <img
+                  <Image
                     src={card.imageUrl}
                     alt={card.title}
+                    width={400}
+                    height={192}
                     className="w-full h-48 object-cover"
                   />
                   <div className="bg-gray-800 text-white p-4 h-full">

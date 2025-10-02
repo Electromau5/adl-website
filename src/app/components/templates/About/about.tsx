@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import PrimaryHeader from '../../molecules/PrimaryHeader';
 import Paragraph from '../../molecules/Paragraph';
 
@@ -23,23 +24,29 @@ export default function AboutUsSection() {
         {/* Image Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           <div className="flex justify-center md:-mt-8">
-            <img
+            <Image
               src="/images/tests/test-image.png"
               alt="About visual 1"
+              width={384}
+              height={400}
               className="w-full max-w-sm h-[400px] object-cover"
             />
           </div>
           <div className="flex justify-center">
-            <img
+            <Image
               src="/images/tests/test-image.png"
               alt="About visual 2"
+              width={384}
+              height={400}
               className="w-full max-w-sm h-[400px] object-cover"
             />
           </div>
           <div className="flex justify-center md:-mt-8">
-            <img
+            <Image
               src="/images/tests/test-image.png"
               alt="About visual 3"
+              width={384}
+              height={400}
               className="w-full max-w-sm h-[400px] object-cover"
             />
           </div>

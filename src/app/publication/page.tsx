@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const articles = [
     { id: 1, title: 'Design Trends 2024', summary: 'Explore the latest in UI/UX design for web and mobile.', image: '/images/publication/design-trends.png', link: '#' },
@@ -16,7 +17,13 @@ export default function PublicationPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                 {articles.map(article => (
                     <a key={article.id} href={article.link} className="block bg-white shadow rounded-lg overflow-hidden hover:shadow-lg transition">
-                        <img src={article.image} alt={article.title} className="w-full h-40 object-cover" />
+                        <Image
+                            src={article.image}
+                            alt={article.title}
+                            width={400}
+                            height={160}
+                            className="w-full h-40 object-cover"
+                        />
                         <div className="p-4">
                             <h2 className="text-xl font-semibold mb-2">{article.title}</h2>
                             <p className="text-gray-600 mb-2">{article.summary}</p>

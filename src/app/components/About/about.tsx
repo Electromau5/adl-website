@@ -26,7 +26,7 @@ export default function AboutUsSection() {
           <h3 className="text-3xl md:text-4xl font-light text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
             Every interaction should feel effortless.
             <span className="block text-gray-900 font-medium mt-4">
-              That's not just our goal—it's our obsession.
+              That&apos;s not just our goal—it&apos;s our obsession.
             </span>
           </h3>
         </div>
@@ -34,7 +34,7 @@ export default function AboutUsSection() {
         {/* Elegant CTA */}
         <div className="text-center">
           <button className="group bg-gray-900 text-white px-12 py-5 rounded-full hover:bg-gray-800 transition-all duration-500 font-medium text-lg tracking-wide">
-            Let's create something beautiful
+            Let&apos;s create something beautiful
             <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
           </button>
 
