@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 const templates = [
     { id: 1, name: 'SaaS Dashboard', price: 49, image: '/images/templates/dashboard.png', description: 'A modern SaaS dashboard template.' },
@@ -28,7 +29,13 @@ export default function MarketplacePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                 {filteredTemplates.map(template => (
                     <div key={template.id} className="bg-white shadow rounded-lg p-4 flex flex-col items-center">
-                        <img src={template.image} alt={template.name} className="w-full h-40 object-cover rounded mb-4" />
+                        <Image
+                            src={template.image}
+                            alt={template.name}
+                            width={300}
+                            height={160}
+                            className="w-full h-40 object-cover rounded mb-4"
+                        />
                         <h2 className="text-xl font-semibold mb-2">{template.name}</h2>
                         <p className="text-gray-600 mb-2 text-center">{template.description}</p>
                         <div className="font-bold text-lg mb-4">${template.price}</div>
