@@ -1,6 +1,5 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import Header from './components/molecules/Header'
 import Footer from './components/molecules/Footer' // optional
 
 export const metadata: Metadata = {
@@ -15,7 +14,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="font-inter bg-white text-gray-900 transition-colors duration-300">
-        <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
       </body>
