@@ -1,7 +1,7 @@
 'use client'
 
 import Milestones from './components/templates/Milestones'
-import AboutUsSection from './components/About/about'
+import AboutImpactSection from './components/molecules/AboutImpactSection'
 import SectionHeader from './components/molecules/SectionHeader'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -48,22 +48,23 @@ export default function HomePage() {
       {/* Full Screen Menu */}
       <FullScreenMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#121212' }}>
         {/* Navigation Bar */}
-        <nav className="absolute top-0 left-0 right-0 bg-black z-50 px-6 sm:px-12 md:px-24 py-6 flex justify-between items-center">
-          <Link href="/" className="text-white text-lg font-medium tracking-wide hover:opacity-80 transition-opacity cursor-pointer">
+        <nav className="fixed top-0 left-0 right-0 z-50 px-6 sm:px-12 md:px-24 py-6 flex justify-between items-center" style={{ backgroundColor: '#121212' }}>
+          <Link href="/" className="text-lg font-medium tracking-wide hover:opacity-80 transition-opacity cursor-pointer" style={{ color: '#feead8' }}>
             ARTEMIS DESIGN LABS
           </Link>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-white text-lg font-medium tracking-wide hover:opacity-80 transition-opacity cursor-pointer"
+            className="text-lg font-medium tracking-wide hover:opacity-80 transition-opacity cursor-pointer"
+            style={{ color: '#feead8' }}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMenuOpen ? 'CLOSE' : 'MENU'}
           </button>
         </nav>
 
-        {/* Subtle background grid pattern */}
+        {/* Background grid pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:64px_64px]"></div>
 
         {/* Content Container */}
@@ -126,7 +127,7 @@ export default function HomePage() {
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-4">
-            <span className="block text-white mb-2">
+            <span className="block mb-2" style={{ color: '#feead8' }}>
               Where Enterprise AI
             </span>
             <span className="block text-cyan-400">
@@ -135,8 +136,8 @@ export default function HomePage() {
           </h1>
 
           {/* Supporting Text */}
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto mb-10 leading-relaxed">
-            We partner with AI-focused teams to transform complex workflows into intuitive
+          <p className="text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto mb-10 leading-relaxed" style={{ color: '#feead8' }}>
+            We partner with AI-focused startups to transform complex workflows into intuitive
             user experiences that accelerate time-to-market and user adoption.
           </p>
 
@@ -150,7 +151,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <AboutUsSection />
+      {/* About/Impact Section - Directly after Banner */}
+      <AboutImpactSection />
 
       {/* Client Logos */}
       <section className="overflow-hidden bg-white py-12">

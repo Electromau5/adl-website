@@ -36,20 +36,22 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
     <>
       {/* Overlay - slides down from top */}
       <div
-        className={`fixed inset-0 bg-black z-50 transition-transform duration-500 ease-in-out ${
+        className={`fixed inset-0 z-50 transition-transform duration-500 ease-in-out ${
           isOpen ? 'translate-y-0' : '-translate-y-full'
         }`}
+        style={{ backgroundColor: '#121212' }}
       >
         {/* Header with Logo and Close Button */}
         <div className="absolute top-0 left-0 right-0 flex justify-between items-center px-6 sm:px-12 md:px-24 h-20 border-b border-gray-800">
           <Link href="/" onClick={onClose}>
-            <span className="text-white text-lg font-bold tracking-wide">
+            <span className="text-lg font-bold tracking-wide" style={{ color: '#feead8' }}>
               ARTEMIS DESIGN LABS
             </span>
           </Link>
           <button
             onClick={onClose}
-            className="text-white text-lg font-medium tracking-wide hover:text-cyan-400 transition-colors duration-300"
+            className="text-lg font-medium tracking-wide hover:text-cyan-400 transition-colors duration-300"
+            style={{ color: '#feead8' }}
             aria-label="Close menu"
           >
             CLOSE
@@ -65,9 +67,15 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
             {/* Row 1: About us / Services */}
             <div className="flex items-center gap-6 sm:gap-12">
               <Link
-                href="/about"
-                onClick={onClose}
-                className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white"
+                href="#about"
+                onClick={(e) => {
+                  e.preventDefault()
+                  onClose()
+                  const section = document.getElementById('about')
+                  if (section) section.scrollIntoView({ behavior: 'smooth' })
+                }}
+                className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold"
+                style={{ color: '#feead8' }}
                 data-text="About us"
               >
                 About us
@@ -76,7 +84,8 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
               <Link
                 href="/services"
                 onClick={onClose}
-                className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white"
+                className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold"
+                style={{ color: '#feead8' }}
                 data-text="Services"
               >
                 Services
@@ -88,7 +97,8 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
               <Link
                 href="/work"
                 onClick={onClose}
-                className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white"
+                className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold"
+                style={{ color: '#feead8' }}
                 data-text="Work"
               >
                 Work
@@ -97,7 +107,8 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
               <Link
                 href="/marketplace"
                 onClick={onClose}
-                className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white"
+                className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold"
+                style={{ color: '#feead8' }}
                 data-text="Marketplace"
               >
                 Marketplace
@@ -106,7 +117,8 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
               <Link
                 href="/design-system-license"
                 onClick={onClose}
-                className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white"
+                className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold"
+                style={{ color: '#feead8' }}
                 data-text="Design System"
               >
                 Design System
@@ -118,7 +130,8 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
               <Link
                 href="/publication"
                 onClick={onClose}
-                className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white"
+                className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold"
+                style={{ color: '#feead8' }}
                 data-text="Publication"
               >
                 Publication
@@ -127,7 +140,8 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
               <Link
                 href="/contact"
                 onClick={onClose}
-                className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white"
+                className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold"
+                style={{ color: '#feead8' }}
                 data-text="Contact"
               >
                 Contact

@@ -226,7 +226,7 @@ body {
 .menu-link-fill {
   position: relative;
   display: inline-block;
-  color: white;
+  color: #feead8;
   transition: color 0.3s ease;
 }
 
