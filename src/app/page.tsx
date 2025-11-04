@@ -2,6 +2,7 @@
 
 import Milestones from './components/templates/Milestones'
 import AboutImpactSection from './components/molecules/AboutImpactSection'
+import DesignScaleSection from './components/molecules/DesignScaleSection'
 import SectionHeader from './components/molecules/SectionHeader'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -151,8 +152,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About/Impact Section - Directly after Banner */}
+      {/* About/Impact Section */}
       <AboutImpactSection />
+
+      {/* Design Once. Scale Forever Section */}
+      <DesignScaleSection />
 
       {/* Client Logos */}
       <section className="overflow-hidden bg-white py-12">

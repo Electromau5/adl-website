@@ -477,3 +477,36 @@ body {
 .animate-word {
   transition: all 0.3s ease-in-out;
 }
+
+/* Company logos upward scrolling animation */
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-scroll-up {
+  animation: scroll-up 30s linear infinite;
+  will-change: transform;
+}
+
+/* Logo hover effects */
+.logo-hover-container {
+  opacity: 0.25;
+  transition: opacity 0.3s ease;
+}
+
+.logo-hover-container:hover {
+  opacity: 1 !important;
+}
+
+.logo-hover-grayscale {
+  transition: filter 0.3s ease;
+}
+
+.logo-hover-container:hover .logo-hover-grayscale {
+  filter: grayscale(0) !important;
+}
