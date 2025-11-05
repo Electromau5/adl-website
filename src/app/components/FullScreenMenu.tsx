@@ -39,19 +39,19 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
         className={`fixed inset-0 z-50 transition-transform duration-500 ease-in-out ${
           isOpen ? 'translate-y-0' : '-translate-y-full'
         }`}
-        style={{ backgroundColor: '#121212' }}
+        style={{ backgroundColor: 'var(--color-bg-primary)' }}
       >
         {/* Header with Logo and Close Button */}
         <div className="absolute top-0 left-0 right-0 flex justify-between items-center px-6 sm:px-12 md:px-24 h-20 border-b border-gray-800">
           <Link href="/" onClick={onClose}>
-            <span className="text-lg font-bold tracking-wide" style={{ color: '#feead8' }}>
+            <span className="text-lg font-bold tracking-wide" style={{ color: 'var(--color-text-primary)' }}>
               ARTEMIS DESIGN LABS
             </span>
           </Link>
           <button
             onClick={onClose}
             className="text-lg font-medium tracking-wide hover:text-cyan-400 transition-colors duration-300"
-            style={{ color: '#feead8' }}
+            style={{ color: 'var(--color-text-primary)' }}
             aria-label="Close menu"
           >
             CLOSE
@@ -75,7 +75,7 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
                   if (section) section.scrollIntoView({ behavior: 'smooth' })
                 }}
                 className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold"
-                style={{ color: '#feead8' }}
+                style={{ color: 'var(--color-text-primary)' }}
                 data-text="About us"
               >
                 About us
@@ -85,7 +85,7 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
                 href="/services"
                 onClick={onClose}
                 className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold"
-                style={{ color: '#feead8' }}
+                style={{ color: 'var(--color-text-primary)' }}
                 data-text="Services"
               >
                 Services
@@ -98,7 +98,7 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
                 href="/work"
                 onClick={onClose}
                 className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold"
-                style={{ color: '#feead8' }}
+                style={{ color: 'var(--color-text-primary)' }}
                 data-text="Work"
               >
                 Work
@@ -108,7 +108,7 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
                 href="/marketplace"
                 onClick={onClose}
                 className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold"
-                style={{ color: '#feead8' }}
+                style={{ color: 'var(--color-text-primary)' }}
                 data-text="Marketplace"
               >
                 Marketplace
@@ -118,7 +118,7 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
                 href="/design-system-license"
                 onClick={onClose}
                 className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold"
-                style={{ color: '#feead8' }}
+                style={{ color: 'var(--color-text-primary)' }}
                 data-text="Design System"
               >
                 Design System
@@ -131,7 +131,7 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
                 href="/publication"
                 onClick={onClose}
                 className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold"
-                style={{ color: '#feead8' }}
+                style={{ color: 'var(--color-text-primary)' }}
                 data-text="Publication"
               >
                 Publication
@@ -141,7 +141,7 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
                 href="/contact"
                 onClick={onClose}
                 className="menu-link-fill text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold"
-                style={{ color: '#feead8' }}
+                style={{ color: 'var(--color-text-primary)' }}
                 data-text="Contact"
               >
                 Contact

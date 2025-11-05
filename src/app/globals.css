@@ -1,5 +1,16 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarala:wght@400;700&display=swap');
+@import './variables.css';
+
+/* 
+ * CSS Variables Reference:
+ * See src/app/variables.css for a complete list of all variables and usage examples.
+ * 
+ * Quick Reference:
+ * --color-text-primary: #FEEAD8 (Light text on dark backgrounds)
+ * --color-bg-primary: #121212 (Dark background for banner and sections)
+ */
 
 :root {
   --background: #ffffff;
@@ -7,6 +18,8 @@
   --font-inter: 'Inter', sans-serif;
   --font-space-grotesk: 'Space Grotesk', sans-serif;
   --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+  --color-text-primary: #FEEAD8;
+  --color-bg-primary: #121212;
 }
 
 .dark :root {
@@ -226,7 +239,7 @@ body {
 .menu-link-fill {
   position: relative;
   display: inline-block;
-  color: #feead8;
+  color: var(--color-text-primary);
   transition: color 0.3s ease;
 }
 
@@ -509,4 +522,61 @@ body {
 
 .logo-hover-container:hover .logo-hover-grayscale {
   filter: grayscale(0) !important;
+}
+
+/* Button styles to ensure CSS variables are applied */
+.btn-primary {
+  color: var(--var-button-text-color) !important;
+  border-color: var(--var-button-border) !important;
+  background-color: var(--var-button-bg) !important;
+}
+
+/* Divider animation styles */
+.divider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 1rem 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.divider-line {
+  height: 1px;
+  background-color: var(--var-divider-color);
+  width: 0;
+  margin: 0 auto;
+  transform-origin: center;
+  transition: none;
+}
+
+.divider-expand {
+  animation: dividerExpand 0.8s ease-out forwards;
+}
+
+.divider-collapse {
+  animation: dividerCollapse 0.5s ease-in forwards;
+}
+
+@keyframes dividerExpand {
+  0% {
+    width: 0;
+    transform: scaleX(0);
+  }
+  100% {
+    width: 100%;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes dividerCollapse {
+  0% {
+    width: 100%;
+    transform: scaleX(1);
+  }
+  100% {
+    width: 0;
+    transform: scaleX(0);
+  }
 }

@@ -1,4 +1,6 @@
 // components/AboutUsSection.tsx
+import Button from '../Atoms/Button'
+
 export default function AboutUsSection() {
   return (
     <section id="about" className="bg-white py-40">
@@ -33,10 +35,10 @@ export default function AboutUsSection() {
 
         {/* Elegant CTA */}
         <div className="text-center">
-          <button className="group bg-gray-900 text-white px-12 py-5 rounded-full hover:bg-gray-800 transition-all duration-500 font-medium text-lg tracking-wide">
+          <Button size="lg" className="group">
             Let&apos;s create something beautiful
             <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
-          </button>
+          </Button>
 
           <p className="text-gray-400 mt-6 text-sm font-light">
             Usually ready in 8-12 weeks

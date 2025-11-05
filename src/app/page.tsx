@@ -3,7 +3,9 @@
 import Milestones from './components/templates/Milestones'
 import AboutImpactSection from './components/molecules/AboutImpactSection'
 import DesignScaleSection from './components/molecules/DesignScaleSection'
+import ServicesSection from './components/molecules/ServicesSection'
 import SectionHeader from './components/molecules/SectionHeader'
+import Button from './components/Atoms/Button'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
@@ -49,16 +51,16 @@ export default function HomePage() {
       {/* Full Screen Menu */}
       <FullScreenMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#121212' }}>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
         {/* Navigation Bar */}
-        <nav className="fixed top-0 left-0 right-0 z-50 px-6 sm:px-12 md:px-24 py-6 flex justify-between items-center" style={{ backgroundColor: '#121212' }}>
-          <Link href="/" className="text-lg font-medium tracking-wide hover:opacity-80 transition-opacity cursor-pointer" style={{ color: '#feead8' }}>
+        <nav className="fixed top-0 left-0 right-0 z-50 px-6 sm:px-12 md:px-24 py-6 flex justify-between items-center" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
+          <Link href="/" className="text-lg font-medium tracking-wide hover:opacity-80 transition-opacity cursor-pointer" style={{ color: 'var(--color-text-primary)' }}>
             ARTEMIS DESIGN LABS
           </Link>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="text-lg font-medium tracking-wide hover:opacity-80 transition-opacity cursor-pointer"
-            style={{ color: '#feead8' }}
+            style={{ color: 'var(--color-text-primary)' }}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMenuOpen ? 'CLOSE' : 'MENU'}
@@ -128,7 +130,7 @@ export default function HomePage() {
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-4">
-            <span className="block mb-2" style={{ color: '#feead8' }}>
+            <span className="block mb-2" style={{ color: 'var(--color-text-primary)' }}>
               Where Enterprise AI
             </span>
             <span className="block text-cyan-400">
@@ -137,18 +139,18 @@ export default function HomePage() {
           </h1>
 
           {/* Supporting Text */}
-          <p className="text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto mb-10 leading-relaxed" style={{ color: '#feead8' }}>
+          <p className="text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto mb-10 leading-relaxed" style={{ color: 'var(--color-text-primary)' }}>
             We partner with AI-focused startups to transform complex workflows into intuitive
             user experiences that accelerate time-to-market and user adoption.
           </p>
 
           {/* CTA Button */}
-          <button
+          <Button
             onClick={scrollToAbout}
-            className="inline-block bg-cyan-400 text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-cyan-300 transition-all duration-300 hover:scale-105"
+            size="md"
           >
             About us
-          </button>
+          </Button>
         </div>
       </section>
 
@@ -157,6 +159,9 @@ export default function HomePage() {
 
       {/* Design Once. Scale Forever Section */}
       <DesignScaleSection />
+
+      {/* Our Services Section */}
+      <ServicesSection />
 
       {/* Client Logos */}
       <section className="overflow-hidden bg-white py-12">
@@ -241,9 +246,9 @@ export default function HomePage() {
         <p className="text-lg max-w-2xl mx-auto mb-8">
           Book a call with our team and let&rsquo;s explore how we can bring your product vision to life—faster, simpler, and more strategically.
         </p>
-        <button className="bg-white text-black font-medium px-6 py-3 rounded-lg hover:bg-gray-200 transition">
+        <Button size="md" className="bg-white text-black hover:bg-gray-200" style={{ backgroundColor: 'white', color: 'black', borderColor: 'white' }}>
           Book a Discovery Call
-        </button>
+        </Button>
       </section>
     </div>
   )

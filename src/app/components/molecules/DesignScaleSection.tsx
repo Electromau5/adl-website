@@ -1,8 +1,14 @@
 'use client'
 
 import Image from 'next/image'
+import Button from '../Atoms/Button'
+import Divider from '../Atoms/Divider'
 
 export default function DesignScaleSection() {
+  const scrollToServices = () => {
+    const section = document.getElementById('services')
+    if (section) section.scrollIntoView({ behavior: 'smooth' })
+  }
   const items = [
     {
       number: 1,
@@ -38,31 +44,40 @@ export default function DesignScaleSection() {
   ]
 
   return (
-    <section id="design-scale" className="min-h-screen flex items-start justify-center px-6 sm:px-12 md:px-24 pt-20 md:pt-32" style={{ backgroundColor: '#121212' }}>
+    <section id="design-scale" className="min-h-screen flex items-start justify-center px-6 sm:px-12 md:px-24 pt-20 md:pt-32" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 max-w-7xl mx-auto">
           {/* Left Column - Text Content */}
           <div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl text-cyan-400 font-medium mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl text-cyan-400 font-medium mb-8" style={{ fontFamily: 'var(--font-sarala)' }}>
               Design Once. Scale Forever.
             </h2>
-            <div className="grid grid-cols-2 gap-6 md:gap-8">
+            <Divider className="mb-16" />
+            <div className="grid grid-cols-2 gap-6 md:gap-8 mb-12">
               {items.map((item) => (
                 <div key={item.number} className="flex flex-col">
                   <div className="flex justify-start mb-4">
-                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full border-2 flex items-center justify-center" style={{ borderColor: '#feead8' }}>
-                      <span className="text-lg md:text-xl font-bold" style={{ color: '#feead8' }}>{item.number}</span>
+                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full border-2 flex items-center justify-center" style={{ borderColor: 'var(--color-text-primary)' }}>
+                      <span className="text-lg md:text-xl font-bold" style={{ color: 'var(--color-text-primary)' }}>{item.number}</span>
                     </div>
                   </div>
-                  <h3 className="text-xl md:text-2xl font-semibold mb-3 text-left" style={{ color: '#feead8' }}>
+                  <h3 className="text-xl md:text-2xl font-semibold mb-3 text-left" style={{ color: 'var(--color-text-primary)' }}>
                     {item.title}
                   </h3>
-                  <p className="text-base md:text-lg leading-relaxed text-left" style={{ color: '#feead8' }}>
+                  <p className="text-base md:text-lg leading-relaxed text-left" style={{ color: 'var(--color-text-primary)' }}>
                     {item.description}
                   </p>
                 </div>
               ))}
             </div>
+
+            {/* CTA Button */}
+            <Button
+              onClick={scrollToServices}
+              size="md"
+            >
+              Our Services
+            </Button>
           </div>
 
           {/* Right Column - Scrolling Logos */}
