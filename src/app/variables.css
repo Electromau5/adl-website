@@ -6,7 +6,7 @@
  */
 
 :root {
-  /* Color Variables */
+  /* Color Variables - Dark Mode (Default) */
   --color-text-primary: #FEEAD8;  /* Light peachy/cream text color - used for primary text on dark backgrounds */
   --color-bg-primary: #121212;    /* Dark gray/black background color - used for banner and dark sections */
   --var-text-section-title: #32ADE6;  /* Blue color for section titles */
@@ -15,6 +15,17 @@
   --var-button-bg: #121212;
   --var-button-text-color:#30B0C7;
   --var-divider-color: #FEEAD8;
+  
+  /* Accent colors */
+  --color-accent-cyan: #30B0C7;
+  --color-accent-blue: #32ADE6;
+  --color-gray-500: #6B7280;
+  --color-gray-800: #1F2937;
+  --color-gray-900: #111827;
+  
+  /* Card/Container colors */
+  --color-card-bg: #1F2937;
+  --color-card-border: #374151;
 
   /* Existing Theme Variables */
   --background: #ffffff;
@@ -25,6 +36,70 @@
   --font-space-grotesk: 'Space Grotesk', sans-serif;
   --font-jakarta: 'Plus Jakarta Sans', sans-serif;
   --font-sarala: 'Sarala', sans-serif;
+} 
+
+/* Light Mode - Reversed Color Palette */
+.light-mode {
+  /* Reverse primary colors */
+  --color-text-primary: #121212;  /* Dark text on light backgrounds */
+  --color-bg-primary: #FEEAD8;    /* Light peachy background */
+  
+  /* Reverse section colors */
+  --var-text-section-title: #1E5A7A;  /* Darker blue for section titles */
+  --var-text-section-sub-title: #1E6B7A;  /* Darker cyan for section subtitles */
+  
+  /* Reverse button colors */
+  --var-button-border: #1E6B7A;
+  --var-button-bg: #FEEAD8;
+  --var-button-text-color: #1E6B7A;
+  
+  /* Reverse divider color */
+  --var-divider-color: #121212;
+  
+  /* Reverse accent colors for light mode */
+  --color-accent-cyan: #1E6B7A;
+  --color-accent-blue: #1E5A7A;
+  --color-gray-500: #4B5563;
+  --color-gray-800: #E5E7EB;
+  --color-gray-900: #F3F4F6;
+  
+  /* Reverse card colors for light mode */
+  --color-card-bg: #F3F4F6;
+  --color-card-border: #E5E7EB;
+  
+  /* Reverse background/foreground */
+  --background: #FEEAD8;
+  --foreground: #121212;
+  
+  /* Grid pattern color for light mode */
+  --grid-pattern-color: rgba(18, 18, 18, 0.05);
+}
+
+/* Dark Mode - Explicit (matches default) */
+.dark-mode {
+  --color-text-primary: #FEEAD8;
+  --color-bg-primary: #121212;
+  --var-text-section-title: #32ADE6;
+  --var-text-section-sub-title: #30B0C7;
+  --var-button-border: #30B0C7;
+  --var-button-bg: #121212;
+  --var-button-text-color: #30B0C7;
+  --var-divider-color: #FEEAD8;
+  
+  /* Accent colors - Dark Mode */
+  --color-accent-cyan: #30B0C7;
+  --color-accent-blue: #32ADE6;
+  --color-gray-500: #6B7280;
+  --color-gray-800: #1F2937;
+  --color-gray-900: #111827;
+  
+  /* Card/Container colors - Dark Mode */
+  --color-card-bg: #1F2937;
+  --color-card-border: #374151;
+  
+  --background: #ffffff;
+  --foreground: #171717;
+  --grid-pattern-color: rgba(255, 255, 255, 0.02);
 }
 
 /* 

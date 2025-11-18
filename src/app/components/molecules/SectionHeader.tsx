@@ -11,10 +11,10 @@ interface SectionHeaderProps {
 export default function SectionHeader({ title, className = '' }: SectionHeaderProps) {
   return (
     <div className="mb-10">
-      <h2 className={`${sectionHeaderStyle} ${className}`}>
+      <h2 className={`${sectionHeaderStyle} ${className}`} style={{ color: 'var(--foreground)' }}>
         {title}
       </h2>
-      <div className="w-full h-[1px] bg-[#000000]" />
+      <div className="w-full h-[1px]" style={{ backgroundColor: 'var(--var-divider-color)' }} />
     </div>
   );
 }

@@ -10,12 +10,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 import FullScreenMenu from './components/FullScreenMenu'
+import { useTheme } from './contexts/ThemeContext'
 
 export default function HomePage() {
   const [isLoaded, setIsLoaded] = useState(false)
   const [marqueeWidth, setMarqueeWidth] = useState<number | null>(null)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const measureRef = React.useRef<HTMLDivElement>(null)
+  const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     // Trigger animation after component mounts
@@ -47,7 +49,7 @@ export default function HomePage() {
   }
 
   return (
-    <div className="bg-white text-black">
+    <div style={{ backgroundColor: 'var(--background)', color: 'var(--foreground)' }}>
       {/* Full Screen Menu */}
       <FullScreenMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
       {/* Hero Section */}
@@ -57,18 +59,33 @@ export default function HomePage() {
           <Link href="/" className="text-lg font-medium tracking-wide hover:opacity-80 transition-opacity cursor-pointer" style={{ color: 'var(--color-text-primary)' }}>
             ARTEMIS DESIGN LABS
           </Link>
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-lg font-medium tracking-wide hover:opacity-80 transition-opacity cursor-pointer"
-            style={{ color: 'var(--color-text-primary)' }}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {isMenuOpen ? 'CLOSE' : 'MENU'}
-          </button>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={toggleTheme}
+              className="text-lg font-medium tracking-wide hover:opacity-80 transition-opacity cursor-pointer"
+              style={{ color: 'var(--color-text-primary)' }}
+              aria-label={theme === 'dark' ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              {theme === 'dark' ? 'LIGHT' : 'DARK'}
+            </button>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-lg font-medium tracking-wide hover:opacity-80 transition-opacity cursor-pointer"
+              style={{ color: 'var(--color-text-primary)' }}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            >
+              {isMenuOpen ? 'CLOSE' : 'MENU'}
+            </button>
+          </div>
         </nav>
 
         {/* Background grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+        <div 
+          className="absolute inset-0 bg-[size:64px_64px]"
+          style={{
+            backgroundImage: `linear-gradient(var(--grid-pattern-color) 1px, transparent 1px), linear-gradient(90deg, var(--grid-pattern-color) 1px, transparent 1px)`
+          }}
+        ></div>
 
         {/* Content Container */}
         <div className={`relative z-10 max-w-5xl mx-auto px-6 text-center transition-all duration-1000 ease-out ${
@@ -83,13 +100,13 @@ export default function HomePage() {
               className="absolute opacity-0 pointer-events-none flex items-center gap-3"
               style={{ visibility: 'hidden', whiteSpace: 'nowrap' }}
             >
-              <span className="text-cyan-400 font-medium tracking-wide">SPEED</span>
-              <span className="text-gray-500">•</span>
-              <span className="text-cyan-400 font-medium tracking-wide">SPECIALIZATION</span>
-              <span className="text-gray-500">•</span>
-              <span className="text-cyan-400 font-medium tracking-wide">INTEGRATION</span>
-              <span className="text-gray-500">•</span>
-              <span className="text-cyan-400 font-medium tracking-wide">QUALITY</span>
+              <span className="font-medium tracking-wide" style={{ color: 'var(--color-accent-cyan)' }}>SPEED</span>
+              <span style={{ color: 'var(--color-gray-500)' }}>•</span>
+              <span className="font-medium tracking-wide" style={{ color: 'var(--color-accent-cyan)' }}>SPECIALIZATION</span>
+              <span style={{ color: 'var(--color-gray-500)' }}>•</span>
+              <span className="font-medium tracking-wide" style={{ color: 'var(--color-accent-cyan)' }}>INTEGRATION</span>
+              <span style={{ color: 'var(--color-gray-500)' }}>•</span>
+              <span className="font-medium tracking-wide" style={{ color: 'var(--color-accent-cyan)' }}>QUALITY</span>
             </div>
             
             {/* Visible carousel - only render when width is measured */}
@@ -108,21 +125,21 @@ export default function HomePage() {
                     animation: `marquee ${marqueeWidth * 0.05}s linear infinite`
                   } as React.CSSProperties}
                 >
-                  <span className="text-cyan-400 font-medium tracking-wide">SPEED</span>
-                  <span className="text-gray-500">•</span>
-                  <span className="text-cyan-400 font-medium tracking-wide">SPECIALIZATION</span>
-                  <span className="text-gray-500">•</span>
-                  <span className="text-cyan-400 font-medium tracking-wide">INTEGRATION</span>
-                  <span className="text-gray-500">•</span>
-                  <span className="text-cyan-400 font-medium tracking-wide">QUALITY</span>
-                  <span className="text-gray-500">•</span>
-                  <span className="text-cyan-400 font-medium tracking-wide">SPEED</span>
-                  <span className="text-gray-500">•</span>
-                  <span className="text-cyan-400 font-medium tracking-wide">SPECIALIZATION</span>
-                  <span className="text-gray-500">•</span>
-                  <span className="text-cyan-400 font-medium tracking-wide">INTEGRATION</span>
-                  <span className="text-gray-500">•</span>
-                  <span className="text-cyan-400 font-medium tracking-wide">QUALITY</span>
+                  <span className="font-medium tracking-wide" style={{ color: 'var(--color-accent-cyan)' }}>SPEED</span>
+                  <span style={{ color: 'var(--color-gray-500)' }}>•</span>
+                  <span className="font-medium tracking-wide" style={{ color: 'var(--color-accent-cyan)' }}>SPECIALIZATION</span>
+                  <span style={{ color: 'var(--color-gray-500)' }}>•</span>
+                  <span className="font-medium tracking-wide" style={{ color: 'var(--color-accent-cyan)' }}>INTEGRATION</span>
+                  <span style={{ color: 'var(--color-gray-500)' }}>•</span>
+                  <span className="font-medium tracking-wide" style={{ color: 'var(--color-accent-cyan)' }}>QUALITY</span>
+                  <span style={{ color: 'var(--color-gray-500)' }}>•</span>
+                  <span className="font-medium tracking-wide" style={{ color: 'var(--color-accent-cyan)' }}>SPEED</span>
+                  <span style={{ color: 'var(--color-gray-500)' }}>•</span>
+                  <span className="font-medium tracking-wide" style={{ color: 'var(--color-accent-cyan)' }}>SPECIALIZATION</span>
+                  <span style={{ color: 'var(--color-gray-500)' }}>•</span>
+                  <span className="font-medium tracking-wide" style={{ color: 'var(--color-accent-cyan)' }}>INTEGRATION</span>
+                  <span style={{ color: 'var(--color-gray-500)' }}>•</span>
+                  <span className="font-medium tracking-wide" style={{ color: 'var(--color-accent-cyan)' }}>QUALITY</span>
                 </div>
               </div>
             )}
@@ -133,7 +150,7 @@ export default function HomePage() {
             <span className="block mb-2" style={{ color: 'var(--color-text-primary)' }}>
               Where Enterprise AI
             </span>
-            <span className="block text-cyan-400">
+            <span className="block" style={{ color: 'var(--color-accent-cyan)' }}>
               Meets Exceptional Design
             </span>
           </h1>
@@ -164,7 +181,7 @@ export default function HomePage() {
       <ServicesSection />
 
       {/* Client Logos */}
-      <section className="overflow-hidden bg-white py-12">
+      <section className="overflow-hidden py-12" style={{ backgroundColor: 'var(--background)' }}>
         <div className="flex animate-scroll space-x-16">
           {/* First set of logos */}
           {[
@@ -212,7 +229,7 @@ export default function HomePage() {
       </section>
 
       {/* Differentiators Grid */}
-      <section className="px-6 sm:px-12 md:px-24 py-12 bg-white">
+      <section className="px-6 sm:px-12 md:px-24 py-12" style={{ backgroundColor: 'var(--background)' }}>
         <div className="max-w-7xl mx-auto">
              {/* Component - Section Header */}
                 
@@ -229,8 +246,8 @@ export default function HomePage() {
               ['Human-Machine Interaction', 'Bridge complexity with simplicity through cognitive design.'],
             ].map(([title, desc]) => (
               <div key={title}>
-                <h3 className="text-xl font-semibold mb-2">{title}</h3>
-                <p className="text-sm text-gray-700">{desc}</p>
+                <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--foreground)' }}>{title}</h3>
+                <p className="text-sm" style={{ color: 'var(--foreground)', opacity: 0.7 }}>{desc}</p>
               </div>
             ))}
           </div>
@@ -241,12 +258,12 @@ export default function HomePage() {
       <Milestones />
 
       {/* Final CTA */}
-      <section className="px-6 sm:px-12 md:px-24 py-20 text-center bg-black text-white">
-        <h2 className="text-3xl sm:text-4xl font-semibold mb-6">Ready to Design What&rsquo;s Next in AI?</h2>
-        <p className="text-lg max-w-2xl mx-auto mb-8">
+      <section className="px-6 sm:px-12 md:px-24 py-20 text-center" style={{ backgroundColor: 'var(--color-bg-primary)', color: 'var(--color-text-primary)' }}>
+        <h2 className="text-3xl sm:text-4xl font-semibold mb-6" style={{ color: 'var(--color-text-primary)' }}>Ready to Design What&rsquo;s Next in AI?</h2>
+        <p className="text-lg max-w-2xl mx-auto mb-8" style={{ color: 'var(--color-text-primary)' }}>
           Book a call with our team and let&rsquo;s explore how we can bring your product vision to life—faster, simpler, and more strategically.
         </p>
-        <Button size="md" className="bg-white text-black hover:bg-gray-200" style={{ backgroundColor: 'white', color: 'black', borderColor: 'white' }}>
+        <Button size="md" style={{ backgroundColor: 'var(--color-text-primary)', color: 'var(--color-bg-primary)', borderColor: 'var(--color-text-primary)' }}>
           Book a Discovery Call
         </Button>
       </section>

@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect } from 'react'
+import { useTheme } from '../contexts/ThemeContext'
 
 interface FullScreenMenuProps {
   isOpen: boolean
@@ -9,6 +10,8 @@ interface FullScreenMenuProps {
 }
 
 export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps) {
+  const { theme, toggleTheme } = useTheme()
+  
   // Prevent body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
@@ -48,14 +51,30 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
               ARTEMIS DESIGN LABS
             </span>
           </Link>
-          <button
-            onClick={onClose}
-            className="text-lg font-medium tracking-wide hover:text-cyan-400 transition-colors duration-300"
-            style={{ color: 'var(--color-text-primary)' }}
-            aria-label="Close menu"
-          >
-            CLOSE
-          </button>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={toggleTheme}
+              className="text-lg font-medium tracking-wide hover:opacity-80 transition-opacity"
+              style={{ color: 'var(--color-text-primary)' }}
+              aria-label={theme === 'dark' ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              {theme === 'dark' ? 'LIGHT' : 'DARK'}
+            </button>
+            <button
+              onClick={onClose}
+              className="text-lg font-medium tracking-wide transition-colors duration-300"
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = 'var(--color-accent-cyan)'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = 'var(--color-text-primary)'
+            }}
+              style={{ color: 'var(--color-text-primary)' }}
+              aria-label="Close menu"
+            >
+              CLOSE
+            </button>
+          </div>
         </div>
 
         {/* Navigation Menu - Centered */}
@@ -80,7 +99,7 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
               >
                 About us
               </Link>
-              <span className="text-3xl sm:text-4xl md:text-5xl text-cyan-400">/</span>
+              <span className="text-3xl sm:text-4xl md:text-5xl" style={{ color: 'var(--color-accent-cyan)' }}>/</span>
               <Link
                 href="/services"
                 onClick={onClose}
@@ -103,7 +122,7 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
               >
                 Work
               </Link>
-              <span className="text-3xl sm:text-4xl md:text-5xl text-cyan-400">/</span>
+              <span className="text-3xl sm:text-4xl md:text-5xl" style={{ color: 'var(--color-accent-cyan)' }}>/</span>
               <Link
                 href="/marketplace"
                 onClick={onClose}
@@ -113,7 +132,7 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
               >
                 Marketplace
               </Link>
-              <span className="text-3xl sm:text-4xl md:text-5xl text-cyan-400">/</span>
+              <span className="text-3xl sm:text-4xl md:text-5xl" style={{ color: 'var(--color-accent-cyan)' }}>/</span>
               <Link
                 href="/design-system-license"
                 onClick={onClose}
@@ -136,7 +155,7 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
               >
                 Publication
               </Link>
-              <span className="text-3xl sm:text-4xl md:text-5xl text-cyan-400">/</span>
+              <span className="text-3xl sm:text-4xl md:text-5xl" style={{ color: 'var(--color-accent-cyan)' }}>/</span>
               <Link
                 href="/contact"
                 onClick={onClose}

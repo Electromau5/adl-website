@@ -32,7 +32,7 @@ export default function AboutImpactSection() {
     <section id="about" className="min-h-screen flex items-center justify-center px-6 sm:px-12 md:px-24" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
       <div className="max-w-7xl mx-auto w-full">
         {/* Tagline */}
-        <h3 className="text-2xl sm:text-3xl md:text-4xl text-cyan-400 text-center mb-8 font-medium" style={{ fontFamily: 'var(--font-sarala)' }}>
+        <h3 className="text-2xl sm:text-3xl md:text-4xl text-center mb-8 font-medium" style={{ fontFamily: 'var(--font-sarala)', color: 'var(--color-accent-cyan)' }}>
           Designers With A Founder Mindset
         </h3>
         <Divider />

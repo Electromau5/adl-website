@@ -91,7 +91,7 @@ export default function ServicesSection() {
       <div className="max-w-7xl mx-auto w-full">
         {/* Section Header */}
         <div className="mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl text-cyan-400 font-medium mb-8" style={{ fontFamily: 'var(--font-sarala)' }}>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-8" style={{ fontFamily: 'var(--font-sarala)', color: 'var(--color-accent-cyan)' }}>
             Our Services
           </h2>
           <Divider className="mb-16" />
@@ -106,12 +106,11 @@ export default function ServicesSection() {
                 <button
                   key={index}
                   onClick={() => setActiveCategory(index)}
-                  className={`block w-full text-left text-xl font-medium transition-colors duration-300 ${
-                    activeCategory === index
-                      ? 'text-white'
-                      : 'text-gray-500 hover:text-gray-300'
-                  }`}
-                  style={activeCategory === index ? { color: 'var(--color-text-primary)' } : {}}
+                  className="block w-full text-left text-xl font-medium transition-colors duration-300"
+                  style={activeCategory === index 
+                    ? { color: 'var(--color-text-primary)' } 
+                    : { color: 'var(--color-gray-500)' }
+                  }
                 >
                   {service.category}
                 </button>
@@ -126,7 +125,19 @@ export default function ServicesSection() {
               {activeService.cards.map((card, index) => (
                 <div
                   key={index}
-                  className="bg-gray-900 p-8 rounded-lg border border-gray-800 hover:border-cyan-400 transition-colors duration-300"
+                  className="p-8 rounded-lg transition-colors duration-300"
+                  style={{ 
+                    backgroundColor: 'var(--color-card-bg)', 
+                    borderColor: 'var(--color-card-border)',
+                    borderWidth: '1px',
+                    borderStyle: 'solid'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = 'var(--color-accent-cyan)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = 'var(--color-card-border)'
+                  }}
                 >
                   <h4 className="text-2xl font-bold text-white mb-4" style={{ color: 'var(--color-text-primary)' }}>
                     {card.name}

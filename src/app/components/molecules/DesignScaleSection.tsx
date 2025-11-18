@@ -49,7 +49,7 @@ export default function DesignScaleSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 max-w-7xl mx-auto">
           {/* Left Column - Text Content */}
           <div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl text-cyan-400 font-medium mb-8" style={{ fontFamily: 'var(--font-sarala)' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium mb-8" style={{ fontFamily: 'var(--font-sarala)', color: 'var(--color-accent-cyan)' }}>
               Design Once. Scale Forever.
             </h2>
             <Divider className="mb-16" />
