@@ -22,23 +22,11 @@
   --color-bg-primary: #121212;
 }
 
-.dark :root {
-  --background: #171717;
-  --foreground: #ededed;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-space-grotesk);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ffffff;
-    --foreground: #ededed;
-  }
 }
 
 html {

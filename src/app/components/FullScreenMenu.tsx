@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { useEffect } from 'react'
-import { useTheme } from '../contexts/ThemeContext'
 
 interface FullScreenMenuProps {
   isOpen: boolean
@@ -10,7 +9,6 @@ interface FullScreenMenuProps {
 }
 
 export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps) {
-  const { theme, toggleTheme } = useTheme()
   
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -52,14 +50,6 @@ export default function FullScreenMenu({ isOpen, onClose }: FullScreenMenuProps)
             </span>
           </Link>
           <div className="flex items-center gap-4">
-            <button
-              onClick={toggleTheme}
-              className="text-lg font-medium tracking-wide hover:opacity-80 transition-opacity"
-              style={{ color: 'var(--color-text-primary)' }}
-              aria-label={theme === 'dark' ? "Switch to light mode" : "Switch to dark mode"}
-            >
-              {theme === 'dark' ? 'LIGHT' : 'DARK'}
-            </button>
             <button
               onClick={onClose}
               className="text-lg font-medium tracking-wide transition-colors duration-300"

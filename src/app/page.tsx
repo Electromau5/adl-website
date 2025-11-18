@@ -10,14 +10,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 import FullScreenMenu from './components/FullScreenMenu'
-import { useTheme } from './contexts/ThemeContext'
 
 export default function HomePage() {
   const [isLoaded, setIsLoaded] = useState(false)
   const [marqueeWidth, setMarqueeWidth] = useState<number | null>(null)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const measureRef = React.useRef<HTMLDivElement>(null)
-  const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     // Trigger animation after component mounts
@@ -60,14 +58,6 @@ export default function HomePage() {
             ARTEMIS DESIGN LABS
           </Link>
           <div className="flex items-center gap-4">
-            <button
-              onClick={toggleTheme}
-              className="text-lg font-medium tracking-wide hover:opacity-80 transition-opacity cursor-pointer"
-              style={{ color: 'var(--color-text-primary)' }}
-              aria-label={theme === 'dark' ? "Switch to light mode" : "Switch to dark mode"}
-            >
-              {theme === 'dark' ? 'LIGHT' : 'DARK'}
-            </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-lg font-medium tracking-wide hover:opacity-80 transition-opacity cursor-pointer"
